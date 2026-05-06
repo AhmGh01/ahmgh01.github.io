@@ -3,132 +3,140 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>عن أحمد الغنيم | Data Scientist</title>
+  <title>عنّي — أحمد الغنيم</title>
   <link rel="stylesheet" href="style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-  <nav class="navbar">
-    <div class="container nav-container">
-      <a href="index.html" class="logo">Ahmed<span>.</span>AI</a>
-      <ul class="nav-links">
-        <li><a href="index.html">الرئيسية</a></li>
-        <li><a href="about.html" class="active">عن أحمد</a></li>
-        <li><a href="index.html#blog">المدونة</a></li>
-        <li><a href="index.html#contact">تواصل</a></li>
-      </ul>
-    </div>
-  </nav>
 
-  <section class="about-hero">
+  <!-- ===== HEADER ===== -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="site-logo">أحمد الغنيم</a>
+      <nav class="site-nav">
+        <a href="index.html" class="nav-link">المدونة</a>
+        <a href="about.html" class="nav-link active">عنّي</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ===== ABOUT HERO ===== -->
+  <section class="hero hero-about">
     <div class="container">
-      <div class="about-grid">
-        <div class="about-image">
-          <div class="avatar-placeholder"><i class="fas fa-user"></i></div>
-          <div class="about-social">
-            <a href="https://github.com/AhmGh01" target="_blank"><i class="fab fa-github"></i></a>
-            <a href="https://twitter.com/AhGh01_" target="_blank"><i class="fab fa-twitter"></i></a>
-          </div>
-        </div>
-        <div class="about-text">
-          <span class="section-tag">من أنا</span>
-          <h1>أحمد الغنيم</h1>
-          <h2 class="about-title">عالم بيانات · باحث في الذكاء الاصطناعي · مستشار أعمال</h2>
-          <p>مرحباً! أنا أحمد الغنيم، طالب دراسات عليا متخصص في علم البيانات والذكاء الاصطناعي، مقيم في الرياض، المملكة العربية السعودية. أجمع بين الشغف التقني بالبيانات والاهتمام العميق بإدارة الأعمال والاستراتيجية.</p>
-          <p>أؤمن بأن البيانات هي لغة العصر، وأن من يتقن قراءتها يملك مفتاح فهم العالم من حوله وصنع قرارات أذكى وأكثر أثراً.</p>
-          <a href="index.html#contact" class="btn btn-primary">تواصل معي</a>
-        </div>
-      </div>
+      <p class="hero-eyebrow">من أنا</p>
+      <h1 class="hero-title">أحمد الغنيم</h1>
+      <p class="hero-sub">عالم بيانات · باحث في الذكاء الاصطناعي · مستشار أعمال — الرياض، المملكة العربية السعودية</p>
     </div>
   </section>
 
-  <section class="skills-section">
-    <div class="container">
-      <div class="section-header">
-        <span class="section-tag">خبرات ومهارات</span>
-        <h2>ما أتقنه</h2>
-      </div>
+  <div class="divider container"></div>
+
+  <!-- ===== ABOUT CONTENT ===== -->
+  <main class="container about-content">
+
+    <div class="about-section">
+      <h2 class="about-section-title">عنّي</h2>
+      <p>مرحباً، أنا أحمد الغنيم، طالب دراسات عليا متخصص في علم البيانات والذكاء الاصطناعي، مقيم في الرياض. أجمع بين الشغف التقني بالبيانات والاهتمام العميق بإدارة الأعمال والاستراتيجية.</p>
+      <p>أؤمن بأن البيانات هي لغة العصر، وأن من يتقن قراءتها يملك مفتاح فهم العالم من حوله وصنع قرارات أذكى وأكثر أثراً. لذلك أسعى دائماً لربط المعرفة التقنية بالسياق الاقتصادي والإداري للسوق السعودي.</p>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="about-section">
+      <h2 class="about-section-title">المهارات التقنية</h2>
       <div class="skills-grid">
-        <div class="skill-category">
-          <h3><i class="fas fa-code"></i> البرمجة والتقنية</h3>
-          <div class="skill-tags">
-            <span>Python</span><span>SQL</span><span>TensorFlow</span>
-            <span>Keras</span><span>Scikit-learn</span><span>Apache Spark</span>
-            <span>Pandas</span><span>NumPy</span>
-          </div>
+        <div class="skill-group">
+          <h3 class="skill-group-title">البرمجة والتحليل</h3>
+          <ul class="skill-list">
+            <li>Python — Pandas، NumPy، Matplotlib</li>
+            <li>SQL — استعلامات وتحليل البيانات</li>
+            <li>Apache Spark — معالجة البيانات الضخمة</li>
+            <li>Jupyter Notebook، VS Code</li>
+          </ul>
         </div>
-        <div class="skill-category">
-          <h3><i class="fas fa-brain"></i> الذكاء الاصطناعي وتعلم الآلة</h3>
-          <div class="skill-tags">
-            <span>Neural Networks</span><span>Deep Learning</span>
-            <span>NLP</span><span>Sentiment Analysis</span>
-            <span>Random Forest</span><span>Decision Trees</span>
-            <span>K-Means Clustering</span>
-          </div>
+        <div class="skill-group">
+          <h3 class="skill-group-title">الذكاء الاصطناعي وتعلم الآلة</h3>
+          <ul class="skill-list">
+            <li>TensorFlow & Keras — الشبكات العصبية</li>
+            <li>Scikit-learn — نماذج تعلم الآلة</li>
+            <li>NLP — تحليل المشاعر ومعالجة النصوص</li>
+            <li>Random Forest، Decision Trees، K-Means</li>
+          </ul>
         </div>
-        <div class="skill-category">
-          <h3><i class="fas fa-briefcase"></i> إدارة الأعمال</h3>
-          <div class="skill-tags">
-            <span>استشارات الأعمال</span><span>إدارة الأداء</span>
-            <span>التخطيط الاستراتيجي</span><span>التحليل المؤسسي</span>
-            <span>Benchmarking</span>
-          </div>
+        <div class="skill-group">
+          <h3 class="skill-group-title">إدارة الأعمال</h3>
+          <ul class="skill-list">
+            <li>استشارات الأعمال والتحليل المؤسسي</li>
+            <li>إدارة الأداء والمؤشرات الاستراتيجية</li>
+            <li>التخطيط الاستراتيجي والـ Benchmarking</li>
+            <li>Power BI، Excel المتقدم</li>
+          </ul>
         </div>
-        <div class="skill-category">
-          <h3><i class="fas fa-tools"></i> الأدوات والبيئات</h3>
-          <div class="skill-tags">
-            <span>Jupyter Notebook</span><span>GitHub</span>
-            <span>VS Code</span><span>Power BI</span>
-            <span>Excel</span><span>PowerPoint</span>
-          </div>
+        <div class="skill-group">
+          <h3 class="skill-group-title">أدوات أخرى</h3>
+          <ul class="skill-list">
+            <li>GitHub — إدارة المشاريع والكود</li>
+            <li>PowerPoint — العروض التقديمية</li>
+            <li>إنتاج المحتوى الرقمي</li>
+            <li>التحدث العام والتواصل المهني</li>
+          </ul>
         </div>
       </div>
     </div>
-  </section>
 
-  <section class="timeline-section">
-    <div class="container">
-      <div class="section-header">
-        <span class="section-tag">المسيرة</span>
-        <h2>التعليم والمسار المهني</h2>
-      </div>
+    <div class="divider"></div>
+
+    <div class="about-section">
+      <h2 class="about-section-title">المسيرة الأكاديمية والمهنية</h2>
+
       <div class="timeline">
         <div class="timeline-item">
-          <div class="timeline-dot"></div>
-          <div class="timeline-content">
-            <span class="timeline-date">2025 - الحاضر</span>
-            <h3>ماجستير علم البيانات والذكاء الاصطناعي</h3>
-            <p>دراسات متخصصة في الذكاء الاصطناعي، معالجة البيانات الضخمة، وتطبيقات تعلم الآلة المتقدمة.</p>
-            <div class="timeline-tags"><span>DS-630 AI</span><span>DS-520 Big Data</span><span>DS-560 Data Science</span></div>
+          <div class="timeline-year">٢٠٢٥ — الحاضر</div>
+          <div class="timeline-body">
+            <h3 class="timeline-title">ماجستير علم البيانات والذكاء الاصطناعي</h3>
+            <p class="timeline-desc">دراسات متخصصة في الذكاء الاصطناعي، معالجة البيانات الضخمة، وتطبيقات تعلم الآلة المتقدمة. المواد الرئيسية: DS-630 الذكاء الاصطناعي، DS-520 Big Data، DS-560 علم البيانات.</p>
           </div>
         </div>
         <div class="timeline-item">
-          <div class="timeline-dot"></div>
-          <div class="timeline-content">
-            <span class="timeline-date">2023 - 2025</span>
-            <h3>استشاري أعمال وإدارة مؤسسية</h3>
-            <p>العمل في مجال استشارات الأعمال وتطوير أنظمة إدارة الأداء المؤسسي وإعداد المبادرات الاستراتيجية.</p>
-            <div class="timeline-tags"><span>استشارات</span><span>إدارة الأداء</span><span>التخطيط الاستراتيجي</span></div>
+          <div class="timeline-year">٢٠٢٣ — ٢٠٢٥</div>
+          <div class="timeline-body">
+            <h3 class="timeline-title">استشاري أعمال وإدارة مؤسسية</h3>
+            <p class="timeline-desc">العمل في مجال استشارات الأعمال وتطوير أنظمة إدارة الأداء المؤسسي وإعداد المبادرات الاستراتيجية في السوق السعودي.</p>
           </div>
         </div>
         <div class="timeline-item">
-          <div class="timeline-dot"></div>
-          <div class="timeline-content">
-            <span class="timeline-date">الرياض، السعودية</span>
-            <h3>البيئة والموقع</h3>
-            <p>أعمل وأدرس من الرياض، وأسعى لربط المعرفة التقنية بالسياق الاقتصادي والإداري للسوق السعودي.</p>
-            <div class="timeline-tags"><span>الرياض</span><span>رؤية 2030</span><span>التحول الرقمي</span></div>
+          <div class="timeline-year">الرياض، السعودية</div>
+          <div class="timeline-body">
+            <h3 class="timeline-title">البيئة والموقع</h3>
+            <p class="timeline-desc">أعمل وأدرس من الرياض، وأسعى لربط المعرفة التقنية بالسياق الاقتصادي للمملكة في ظل رؤية ٢٠٣٠ والتحول الرقمي المتسارع.</p>
           </div>
         </div>
       </div>
     </div>
-  </section>
 
-  <footer>
-    <div class="container">
-      <p>© 2026 Ahmed Alghunaim · صُنع بـ ❤️ في الرياض، المملكة العربية السعودية</p>
+    <div class="divider"></div>
+
+    <div class="about-section about-contact">
+      <h2 class="about-section-title">تواصل معي</h2>
+      <p>يسعدني الحديث عن علم البيانات، الذكاء الاصطناعي، أو أي تعاون مهني.</p>
+      <div class="contact-row">
+        <a href="https://github.com/AhmGh01" target="_blank" class="contact-link">GitHub ←</a>
+        <a href="https://twitter.com/AhGh01_" target="_blank" class="contact-link">X (تويتر) ←</a>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <span class="footer-name">أحمد الغنيم</span>
+      <div class="footer-links">
+        <a href="https://github.com/AhmGh01" target="_blank">GitHub</a>
+        <a href="https://twitter.com/AhGh01_" target="_blank">X (تويتر)</a>
+        <a href="about.html">عنّي</a>
+      </div>
     </div>
   </footer>
+
 </body>
 </html>

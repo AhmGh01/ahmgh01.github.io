@@ -1,6 +1,6 @@
 /* ============================================
    THMANYAH-INSPIRED THEME
-   Ahmed Alghunaim — ahmgh01.github.io
+   Ahmed Al-Obaiwi — ahmgh01.github.io
    ============================================ */
 
 /* ---- FONTS ---- */
@@ -334,9 +334,7 @@ div.divider.container {
 }
 
 /* ---- ARTICLE PAGE ---- */
-.article-hero {
-  padding: 48px 0 32px;
-}
+.article-hero { padding: 48px 0 32px; }
 .back-nav {
   display: inline-block;
   font-family: var(--font-sans);
@@ -374,10 +372,7 @@ div.divider.container {
   color: var(--color-muted);
 }
 .meta-dot { color: var(--color-border); }
-.article-body {
-  max-width: 680px;
-  padding-bottom: 80px;
-}
+.article-body { max-width: 680px; padding-bottom: 80px; }
 .article-lead {
   font-family: var(--font-serif);
   font-size: 1.18rem;
@@ -551,4 +546,11 @@ div.divider.container {
   .site-nav { gap: 16px; }
   .contact-row { flex-direction: column; gap: 12px; }
   .site-logo-icon { width: 24px; height: 24px; }
+}
+
+/* ---- LOGO EMOJI FALLBACK ---- */
+.site-logo-emoji {
+  font-size: 1.3rem;
+  line-height: 1;
+  flex-shrink: 0;
 }

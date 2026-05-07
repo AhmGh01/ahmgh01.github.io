@@ -3,47 +3,75 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>القرارات المدعومة بالبيانات — أحمد العبيوي</title>
-  <link rel="icon" type="image/png" href="favicon.png">
+  <title>القرارات الاستراتيجية — أحمد العبيوي</title>
+  <script>if(localStorage.getItem('darkMode')==='on')document.documentElement.classList.add('dark-mode');</script>
+  <link rel="icon" type="image/png" href="brain_icon.png">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <header class="site-header">
     <div class="container header-inner">
       <a href="index.html" class="site-logo">
-        <img src="favicon.png" alt="أيقونة" class="site-logo-icon">
+        <img src="brain_icon.png" alt="أيقونة" class="site-logo-icon">
         أحمد العبيوي
       </a>
       <nav class="site-nav">
         <a href="index.html" class="nav-link">المدونة</a>
         <a href="about.html" class="nav-link">عنّي</a>
+        <button class="dark-btn" id="darkToggle" aria-label="تبديل النمط">
+          <span class="btn-moon">🌙</span>
+          <span class="btn-label">الوضع الليلي</span>
+        </button>
       </nav>
     </div>
   </header>
-  <main class="container">
-    <section class="article-hero">
-      <a href="index.html" class="back-nav">← العودة إلى المدونة</a>
-      <div class="eyebrow">إدارة الأعمال</div>
+  <div class="container">
+    <div class="article-hero">
+      <a href="index.html" class="back-nav">← العودة للمدونة</a>
+      <p class="eyebrow">إدارة الأعمال</p>
       <h1 class="article-title">كيف تستخدم البيانات في اتخاذ قرارات استراتيجية أذكى؟</h1>
       <div class="article-meta">
-        <span>الخميس، ٧ مايو ٢٠٢٦</span><span class="meta-dot">·</span><span>١٠ دقائق للقراءة</span>
+        <span>الخميس، ٧ مايو ٢٠٢٦</span>
+        <span class="meta-dot">·</span>
+        <span>١٠ دقائق للقراءة</span>
       </div>
-    </section>
-    <div class="divider"></div>
-    <article class="article-body">
-      <p class="article-lead">منهجية متكاملة لتوظيف تحليل البيانات في دعم القرارات على مستوى الإدارة العليا وتحقيق الميزة التنافسية.</p>
-      <h2>لماذا القرار المدعوم بالبيانات؟</h2>
-      <p>البيانات تمنح القادة صورة أوضح عن الأداء والسوق والعميل، وتقلل الاعتماد على التحيزات المعرفية.</p>
-      <h2>إطار عملي</h2>
-      <p>حدد السؤال بدقة، اختر المؤشرات، ابنِ لوحة متابعة، راجع دورياً، حوّل التحليل إلى إجراء فعلي.</p>
-      <div class="article-footer-nav"><a href="index.html" class="back-link">← العودة إلى المدونة</a></div>
-    </article>
-  </main>
+    </div>
+    <hr class="divider">
+    <div class="article-body">
+      <p class="article-lead">منهجية متكاملة لتوظيف تحليل البيانات في دعم القرارات على مستوى الإدارة العليا.</p>
+      <h2>لماذا البيانات في القرار الاستراتيجي؟</h2>
+      <p>تتيح البيانات للمديرين رؤية واضحة لواقع السوق، وفهم سلوك العملاء، وتحسين كفاءة العمليات بشكل مستمر.</p>
+      <h2>خطوات بناء منظومة تحليلية</h2>
+      <p>تبدأ بتحديد الأسئلة الاستراتيجية، ثم جمع البيانات المناسبة، ثم تحليلها وربطها بالقرارات.</p>
+      <div class="article-footer-nav">
+        <a href="index.html" class="back-link">← العودة للمدونة</a>
+      </div>
+    </div>
+  </div>
   <footer class="site-footer">
     <div class="container footer-inner">
       <span class="footer-name">أحمد العبيوي</span>
-      <div class="footer-links"><a href="index.html">المدونة</a><a href="about.html">عنّي</a></div>
+      <div class="footer-links">
+        <a href="https://github.com/AhmGh01" target="_blank">GitHub</a>
+        <a href="https://twitter.com/AhGh01_" target="_blank">X (تويتر)</a>
+        <a href="about.html">عنّي</a>
+      </div>
     </div>
   </footer>
+  <script>
+    const btn = document.getElementById('darkToggle');
+    const label = btn.querySelector('.btn-label');
+    function applyDark(on) {
+      document.documentElement.classList.toggle('dark-mode', on);
+      document.body.classList.toggle('dark-mode', on);
+      label.textContent = on ? 'الوضع النهاري' : 'الوضع الليلي';
+    }
+    applyDark(localStorage.getItem('darkMode') === 'on');
+    btn.addEventListener('click', () => {
+      const isDark = document.body.classList.contains('dark-mode');
+      localStorage.setItem('darkMode', isDark ? 'off' : 'on');
+      applyDark(!isDark);
+    });
+  </script>
 </body>
 </html>

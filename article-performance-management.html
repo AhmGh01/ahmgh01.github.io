@@ -4,46 +4,74 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>إدارة الأداء — أحمد العبيوي</title>
-  <link rel="icon" type="image/png" href="favicon.png">
+  <script>if(localStorage.getItem('darkMode')==='on')document.documentElement.classList.add('dark-mode');</script>
+  <link rel="icon" type="image/png" href="brain_icon.png">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <header class="site-header">
     <div class="container header-inner">
       <a href="index.html" class="site-logo">
-        <img src="favicon.png" alt="أيقونة" class="site-logo-icon">
+        <img src="brain_icon.png" alt="أيقونة" class="site-logo-icon">
         أحمد العبيوي
       </a>
       <nav class="site-nav">
         <a href="index.html" class="nav-link">المدونة</a>
         <a href="about.html" class="nav-link">عنّي</a>
+        <button class="dark-btn" id="darkToggle" aria-label="تبديل النمط">
+          <span class="btn-moon">🌙</span>
+          <span class="btn-label">الوضع الليلي</span>
+        </button>
       </nav>
     </div>
   </header>
-  <main class="container">
-    <section class="article-hero">
-      <a href="index.html" class="back-nav">← العودة إلى المدونة</a>
-      <div class="eyebrow">استراتيجية</div>
+  <div class="container">
+    <div class="article-hero">
+      <a href="index.html" class="back-nav">← العودة للمدونة</a>
+      <p class="eyebrow">الاستراتيجية</p>
       <h1 class="article-title">نماذج إدارة الأداء المؤسسي في عصر البيانات ورؤية ٢٠٣٠</h1>
       <div class="article-meta">
-        <span>الخميس، ٧ مايو ٢٠٢٦</span><span class="meta-dot">·</span><span>٩ دقائق للقراءة</span>
+        <span>الخميس، ٧ مايو ٢٠٢٦</span>
+        <span class="meta-dot">·</span>
+        <span>٩ دقائق للقراءة</span>
       </div>
-    </section>
-    <div class="divider"></div>
-    <article class="article-body">
-      <p class="article-lead">كيف تحوّل المنظمات الحديثة أنظمة إدارة الأداء لديها باستخدام مؤشرات مدفوعة بالبيانات.</p>
-      <h2>إدارة الأداء في العصر الرقمي</h2>
-      <p>تحوّلت إلى منظومة مستمرة من القياس والتعلم والتحسين، تُغذيها البيانات في الوقت الحقيقي.</p>
-      <h2>ما الذي ينجح فعلاً؟</h2>
-      <p>عدد محدود من المؤشرات المهمة حقاً، ومراجعات دورية منتظمة، وربط التحليل بالتنفيذ الفعلي.</p>
-      <div class="article-footer-nav"><a href="index.html" class="back-link">← العودة إلى المدونة</a></div>
-    </article>
-  </main>
+    </div>
+    <hr class="divider">
+    <div class="article-body">
+      <p class="article-lead">كيف تحوّل المنظمات الحديثة أنظمة إدارة الأداء باستخدام مؤشرات مدفوعة بالبيانات.</p>
+      <h2>تحول إدارة الأداء</h2>
+      <p>انتقلت المنظمات من التقييم السنوي التقليدي إلى متابعة مستمرة تعتمد على بيانات آنية ومؤشرات دقيقة.</p>
+      <h2>رؤية ٢٠٣٠ وعلاقتها بالبيانات</h2>
+      <p>تتطلب رؤية ٢٠٣٠ للمملكة بنية تحتية تحليلية متطورة لقياس مخرجات التحول بدقة.</p>
+      <div class="article-footer-nav">
+        <a href="index.html" class="back-link">← العودة للمدونة</a>
+      </div>
+    </div>
+  </div>
   <footer class="site-footer">
     <div class="container footer-inner">
       <span class="footer-name">أحمد العبيوي</span>
-      <div class="footer-links"><a href="index.html">المدونة</a><a href="about.html">عنّي</a></div>
+      <div class="footer-links">
+        <a href="https://github.com/AhmGh01" target="_blank">GitHub</a>
+        <a href="https://twitter.com/AhGh01_" target="_blank">X (تويتر)</a>
+        <a href="about.html">عنّي</a>
+      </div>
     </div>
   </footer>
+  <script>
+    const btn = document.getElementById('darkToggle');
+    const label = btn.querySelector('.btn-label');
+    function applyDark(on) {
+      document.documentElement.classList.toggle('dark-mode', on);
+      document.body.classList.toggle('dark-mode', on);
+      label.textContent = on ? 'الوضع النهاري' : 'الوضع الليلي';
+    }
+    applyDark(localStorage.getItem('darkMode') === 'on');
+    btn.addEventListener('click', () => {
+      const isDark = document.body.classList.contains('dark-mode');
+      localStorage.setItem('darkMode', isDark ? 'off' : 'on');
+      applyDark(!isDark);
+    });
+  </script>
 </body>
 </html>

@@ -9,10 +9,8 @@
     var fs = localStorage.getItem('fontSize') || 'md';
     document.documentElement.setAttribute('data-fs', fs);
   </script>
-  <link rel="icon" type="image/png" href="brain_icon.png">
   <link rel="stylesheet" href="style.css">
   <style>
-    /* ---- ABOUT PAGE EXTENDED STYLES ---- */
     .about-content { padding-bottom: 80px; }
     .about-section { margin-bottom: 48px; }
     .about-section-title {
@@ -114,7 +112,6 @@
       stroke: var(--color-text);
       transition: stroke 0.2s;
     }
-    /* Footer icon links */
     .footer-icon-link {
       display: inline-flex;
       align-items: center;
@@ -125,6 +122,13 @@
     }
     .footer-icon-link:hover { color: var(--color-text); }
     .footer-icon-link svg { display: block; }
+    /* ---- INLINE SVG LOGO ---- */
+    .logo-svg-mark {
+      width: 30px;
+      height: 30px;
+      flex-shrink: 0;
+      display: block;
+    }
     @media (max-width: 640px) {
       .timeline-item { flex-direction: column; gap: 6px; }
       .timeline-year { min-width: auto; }
@@ -138,7 +142,15 @@
   <header class="site-header">
     <div class="container header-inner">
       <a href="index.html" class="site-logo">
-        <img src="brain_icon.png" alt="أيقونة" class="site-logo-icon">
+        <!-- شعار SVG مدمج — لا يحتاج ملف خارجي -->
+        <svg class="logo-svg-mark" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <rect width="30" height="30" rx="7" fill="#C8963E"/>
+          <rect x="5" y="14" width="4" height="11" rx="1.5" fill="#FAF9F7" opacity="0.9"/>
+          <rect x="11" y="9" width="4" height="16" rx="1.5" fill="#FAF9F7"/>
+          <rect x="17" y="11" width="4" height="14" rx="1.5" fill="#FAF9F7" opacity="0.9"/>
+          <polyline points="5,18 9,14 13,11 17,13 21,8" stroke="#1A1A18" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" fill="none" opacity="0.55"/>
+          <circle cx="21" cy="8" r="2" fill="#1A1A18" opacity="0.65"/>
+        </svg>
         أحمد العبيوي
       </a>
       <nav class="site-nav">

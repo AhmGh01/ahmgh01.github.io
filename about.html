@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>عنّي — أحمد العبيوي</title>
+  <script>
+    if(localStorage.getItem('darkMode')==='on') document.documentElement.classList.add('dark-mode');
+    var fs = localStorage.getItem('fontSize') || 'md';
+    document.documentElement.setAttribute('data-fs', fs);
+  </script>
+  <link rel="icon" type="image/png" href="brain_icon.png">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="site-logo">
+        <img src="brain_icon.png" alt="أيقونة" class="site-logo-icon">
+        أحمد العبيوي
+      </a>
+      <nav class="site-nav">
+        <a href="index.html" class="nav-link">المدونة</a>
+        <a href="about.html" class="nav-link active">عنّي</a>
+        <div class="font-size-controls" aria-label="حجم الخط">
+          <button class="font-size-btn" id="fsDecrease" aria-label="تصغير الخط" title="تصغير الخط">A−</button>
+          <span class="font-size-divider"></span>
+          <button class="font-size-btn" id="fsIncrease" aria-label="تكبير الخط" title="تكبير الخط">A+</button>
+        </div>
+        <button class="dark-btn" id="darkToggle" aria-label="تبديل الوضع الليلي"><span class="theme-icon"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg></span></button>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero hero-about">
+    <div class="container">
+      <p class="hero-eyebrow">من أنا</p>
+      <h1 class="hero-title">أحمد العبيوي</h1>
+      <p class="hero-sub">مختص بالإستراتيجيات، إدارة المشاريع، تحليل الأعمال، وعلم البيانات</p>
+    </div>
+  </section>
+
+  <div class="divider container"></div>
+
+  <section class="about-section">
+    <div class="container">
+      <p class="about-bio">أنا أحمد العبيوي، متخصص في تحليل البيانات وإدارة الأعمال من الرياض. أجمع بين الخلفية الأكاديمية في علوم البيانات والخبرة العملية في الاستشارات الإدارية. أكتب في هذه المدونة عن التقاطع بين البيانات، الذكاء الاصطناعي، وقرارات الأعمال.</p>
+
+      <div class="about-grid">
+        <div class="about-card">
+          <div class="about-card-label">المهارات التقنية</div>
+          <ul>
+            <li>Python وتحليل البيانات</li>
+            <li>التعلم الآلي والذكاء الاصطناعي</li>
+            <li>Apache Spark والبيانات الضخمة</li>
+            <li>SQL وقواعد البيانات</li>
+            <li>تصوير البيانات (Tableau, Power BI)</li>
+          </ul>
+        </div>
+        <div class="about-card">
+          <div class="about-card-label">الاهتمامات</div>
+          <ul>
+            <li>إدارة الأداء المؤسسي</li>
+            <li>التحول الرقمي في الأعمال</li>
+            <li>القرارات المبنية على البيانات</li>
+            <li>الذكاء الاصطناعي التوليدي</li>
+            <li>ريادة الأعمال والابتكار</li>
+          </ul>
+        </div>
+        <div class="about-card">
+          <div class="about-card-label">التعليم</div>
+          <ul>
+            <li>ماجستير في علوم البيانات</li>
+            <li>جامعة الجنوب الشرقي</li>
+            <li>دورات متخصصة في الذكاء الاصطناعي</li>
+            <li>شهادات في إدارة المشاريع</li>
+          </ul>
+        </div>
+        <div class="about-card">
+          <div class="about-card-label">تواصل معي</div>
+          <ul>
+            <li>GitHub: AhmGh01</li>
+            <li>الرياض، المملكة العربية السعودية</li>
+            <li>متاح للتعاون في المشاريع</li>
+            <li>استشارات في تحليل البيانات</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <span class="footer-name">أحمد العبيوي</span>
+      <nav class="footer-links">
+        <a href="index.html">المدونة</a>
+        <a href="about.html">عنّي</a>
+        <a href="https://github.com/AhmGh01" target="_blank" rel="noopener">GitHub</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script>
+    const darkBtn = document.getElementById('darkToggle');
+    const html = document.documentElement;
+    const moonSVG = '<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>';
+    const sunSVG = '<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>';
+    function updateIcon() {
+      const isDark = html.classList.contains('dark-mode');
+      darkBtn.querySelector('.theme-icon').innerHTML = isDark ? sunSVG : moonSVG;
+      darkBtn.setAttribute('aria-label', isDark ? 'التبديل إلى الوضع النهاري' : 'التبديل إلى الوضع الليلي');
+    }
+    updateIcon();
+    darkBtn.addEventListener('click', function() {
+      html.classList.toggle('dark-mode');
+      localStorage.setItem('darkMode', html.classList.contains('dark-mode') ? 'on' : 'off');
+      updateIcon();
+    });
+    const fsLevels = ['sm','md','lg','xl'];
+    let fsCurrent = localStorage.getItem('fontSize') || 'md';
+    function applyFs(level) {
+      fsCurrent = level;
+      html.setAttribute('data-fs', level);
+      localStorage.setItem('fontSize', level);
+    }
+    document.getElementById('fsIncrease').addEventListener('click', function() {
+      const idx = fsLevels.indexOf(fsCurrent);
+      if (idx < fsLevels.length - 1) applyFs(fsLevels[idx + 1]);
+    });
+    document.getElementById('fsDecrease').addEventListener('click', function() {
+      const idx = fsLevels.indexOf(fsCurrent);
+      if (idx > 0) applyFs(fsLevels[idx - 1]);
+    });
+  </script>
+</body>
+</html>

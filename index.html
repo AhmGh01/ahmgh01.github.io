@@ -4,13 +4,14 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>أحمد العبيوي — مدونة في علوم البيانات والإدارة</title>
+  <!-- تطبيق الوضع الليلي فوراً قبل تحميل CSS لتجنب الوميض -->
+  <script>if(localStorage.getItem('darkMode')==='on')document.documentElement.classList.add('dark-mode');</script>
   <link rel="icon" type="image/png" href="brain_icon.png">
   <link rel="apple-touch-icon" href="brain_icon.png">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <!-- HEADER -->
   <header class="site-header">
     <div class="container header-inner">
       <a href="index.html" class="site-logo">
@@ -28,7 +29,6 @@
     </div>
   </header>
 
-  <!-- HERO -->
   <section class="hero">
     <div class="container">
       <p class="hero-eyebrow">مدونة في البيانات والذكاء الاصطناعي</p>
@@ -39,13 +39,8 @@
 
   <div class="divider container"></div>
 
-  <!-- TWO-COLUMN LAYOUT -->
   <div class="index-layout">
-
-    <!-- ARTICLES (right column in RTL = order 0) -->
     <main class="index-main" id="articlesMain">
-
-      <!-- Featured -->
       <a href="article-neural-networks.html" class="article-featured" data-topics="ai">
         <div class="featured-meta">
           <span class="tag tag-ai">الذكاء الاصطناعي</span>
@@ -58,10 +53,7 @@
           <span class="read-more-link">اقرأ المقال ←</span>
         </div>
       </a>
-
       <div class="divider"></div>
-
-      <!-- List -->
       <div class="articles-list">
         <a href="article-sentiment-analysis.html" class="article-row" data-topics="data">
           <div class="article-row-body">
@@ -115,7 +107,6 @@
       </div>
     </main>
 
-    <!-- SIDEBAR (left in RTL, order:1) -->
     <aside class="topics-sidebar">
       <p class="sidebar-label">المواضيع</p>
       <ul class="sidebar-list">
@@ -127,9 +118,7 @@
         <li class="sidebar-item" data-topic="strategy" onclick="filterTopic('strategy',this)">الاستراتيجية <span class="sidebar-count">1</span></li>
       </ul>
     </aside>
-
   </div>
-  <!-- END TWO-COLUMN -->
 
   <footer class="site-footer">
     <div class="container footer-inner">
@@ -143,42 +132,37 @@
   </footer>
 
   <script>
-    /* ---------- DARK MODE (shared via localStorage) ---------- */
     const btn = document.getElementById('darkToggle');
-    const body = document.body;
     const label = btn.querySelector('.btn-label');
 
     function applyDark(on) {
-      body.classList.toggle('dark-mode', on);
+      document.documentElement.classList.toggle('dark-mode', on);
+      document.body.classList.toggle('dark-mode', on);
       label.textContent = on ? 'الوضع النهاري' : 'الوضع الليلي';
     }
 
-    // Apply saved preference on load
     applyDark(localStorage.getItem('darkMode') === 'on');
 
     btn.addEventListener('click', () => {
-      const isDark = body.classList.contains('dark-mode');
+      const isDark = document.body.classList.contains('dark-mode');
       localStorage.setItem('darkMode', isDark ? 'off' : 'on');
       applyDark(!isDark);
     });
 
-    /* ---------- TOPIC FILTER ---------- */
     function filterTopic(topic, el) {
       document.querySelectorAll('.sidebar-item').forEach(i => i.classList.remove('active'));
       el.classList.add('active');
       const featured = document.querySelector('.article-featured');
-      const rows     = document.querySelectorAll('.article-row');
+      const rows = document.querySelectorAll('.article-row');
       if (topic === 'all') {
         featured && featured.classList.remove('article-hidden');
         rows.forEach(r => r.classList.remove('article-hidden'));
       } else {
         if (featured) {
-          const t = (featured.dataset.topics || '').split(' ');
-          featured.classList.toggle('article-hidden', !t.includes(topic));
+          featured.classList.toggle('article-hidden', !(featured.dataset.topics||'').split(' ').includes(topic));
         }
         rows.forEach(r => {
-          const t = (r.dataset.topics || '').split(' ');
-          r.classList.toggle('article-hidden', !t.includes(topic));
+          r.classList.toggle('article-hidden', !(r.dataset.topics||'').split(' ').includes(topic));
         });
       }
     }

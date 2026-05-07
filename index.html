@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>أحمد العبيوي — مدونة في علوم البيانات والإدارة</title>
+  <script>
+    if(localStorage.getItem('darkMode')==='on') document.documentElement.classList.add('dark-mode');
+    var fs = localStorage.getItem('fontSize') || 'md';
+    document.documentElement.setAttribute('data-fs', fs);
+  </script>
+  <link rel="icon" type="image/png" href="brain_icon.png">
+  <link rel="apple-touch-icon" href="brain_icon.png">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="site-logo">
+        <img src="brain_icon.png" alt="أيقونة" class="site-logo-icon">
+        أحمد العبيوي
+      </a>
+      <nav class="site-nav">
+        <a href="index.html" class="nav-link active">المدونة</a>
+        <a href="about.html" class="nav-link">عنّي</a>
+        <div class="font-size-controls" aria-label="حجم الخط">
+          <button class="font-size-btn" id="fsDecrease" aria-label="تصغير الخط" title="تصغير الخط">A−</button>
+          <span class="font-size-divider"></span>
+          <button class="font-size-btn" id="fsIncrease" aria-label="تكبير الخط" title="تكبير الخط">A+</button>
+        </div>
+        <button class="dark-btn" id="darkToggle" aria-label="تبديل الوضع الليلي"><span class="theme-icon"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg></span></button>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container">
+      <p class="hero-eyebrow">مدونة في البيانات والذكاء الاصطناعي</p>
+      <h1 class="hero-title">أفكار من قلب البيانات</h1>
+      <p class="hero-sub">تحليلات وآراء في علم البيانات، الذكاء الاصطناعي، وإدارة الأعمال — من الرياض</p>
+    </div>
+  </section>
+
+  <div class="divider container"></div>
+
+  <div class="index-layout">
+    <main class="index-main" id="articlesMain">
+      <a href="article-neural-networks.html" class="article-featured" data-topics="ai">
+        <div class="featured-meta">
+          <span class="tag tag-ai">الذكاء الاصطناعي</span>
+          <span class="article-date">الخميس، ٧ مايو ٢٠٢٦</span>
+        </div>
+        <h2 class="featured-title">الشبكات العصبية الاصطناعية: كيف يتعلم الكمبيوتر كما يتعلم الإنسان؟</h2>
+        <p class="featured-excerpt">استكشاف معمّق لمبادئ الشبكات العصبية الاصطناعية، وكيف تحاكي عمل الدماغ البشري في التعلم وحل المشكلات المعقدة.</p>
+        <div class="featured-footer">
+          <span class="read-time">٨ دقائق للقراءة</span>
+          <span class="read-more-link">اقرأ المقال ←</span>
+        </div>
+      </a>
+      <div class="divider"></div>
+      <div class="articles-list">
+        <a href="article-sentiment-analysis.html" class="article-row" data-topics="data">
+          <div class="article-row-body">
+            <div class="article-row-meta"><span class="tag tag-data">علم البيانات</span><span class="article-date">الخميس، ٧ مايو ٢٠٢٦</span></div>
+            <h3 class="article-row-title">تحليل المشاعر باستخدام Python وNLP: دليل عملي من الصفر</h3>
+            <p class="article-row-excerpt">دليل عملي لبناء نموذج تحليل المشاعر من الصفر باستخدام مكتبات Python الحديثة.</p>
+            <span class="read-more-link inline-read">اقرأ المقال ←</span>
+          </div>
+          <span class="article-row-time">١٢ د</span>
+        </a>
+        <div class="article-divider"></div>
+        <a href="article-data-driven-decisions.html" class="article-row" data-topics="business strategy">
+          <div class="article-row-body">
+            <div class="article-row-meta"><span class="tag tag-business">إدارة الأعمال</span><span class="article-date">الخميس، ٧ مايو ٢٠٢٦</span></div>
+            <h3 class="article-row-title">كيف تستخدم البيانات في اتخاذ قرارات استراتيجية أذكى؟</h3>
+            <p class="article-row-excerpt">منهجية متكاملة لتوظيف تحليل البيانات في دعم القرارات على مستوى الإدارة العليا.</p>
+            <span class="read-more-link inline-read">اقرأ المقال ←</span>
+          </div>
+          <span class="article-row-time">١٠ د</span>
+        </a>
+        <div class="article-divider"></div>
+        <a href="article-random-forest.html" class="article-row" data-topics="ml">
+          <div class="article-row-body">
+            <div class="article-row-meta"><span class="tag tag-ai">تعلم الآلة</span><span class="article-date">الخميس، ٧ مايو ٢٠٢٦</span></div>
+            <h3 class="article-row-title">خوارزمية Random Forest: الدليل الشامل مع تطبيق عملي</h3>
+            <p class="article-row-excerpt">شرح معمّق لخوارزمية الغابة العشوائية مع تطبيق عملي وتحليل مقارن للأداء.</p>
+            <span class="read-more-link inline-read">اقرأ المقال ←</span>
+          </div>
+          <span class="article-row-time">١٥ د</span>
+        </a>
+        <div class="article-divider"></div>
+        <a href="article-apache-spark.html" class="article-row" data-topics="data">
+          <div class="article-row-body">
+            <div class="article-row-meta"><span class="tag tag-data">Big Data</span><span class="article-date">الخميس، ٧ مايو ٢٠٢٦</span></div>
+            <h3 class="article-row-title">معالجة البيانات الضخمة مع Apache Spark: من النظرية إلى التطبيق</h3>
+            <p class="article-row-excerpt">كيفية استخدام Apache Spark لمعالجة وتحليل ملايين السجلات بكفاءة عالية.</p>
+            <span class="read-more-link inline-read">اقرأ المقال ←</span>
+          </div>
+          <span class="article-row-time">١١ د</span>
+        </a>
+        <div class="article-divider"></div>
+        <a href="article-performance-management.html" class="article-row" data-topics="strategy">
+          <div class="article-row-body">
+            <div class="article-row-meta"><span class="tag tag-business">استراتيجية</span><span class="article-date">الخميس، ٧ مايو ٢٠٢٦</span></div>
+            <h3 class="article-row-title">نماذج إدارة الأداء المؤسسي في عصر البيانات ورؤية ٢٠٣٠</h3>
+            <p class="article-row-excerpt">كيف تحوّل المنظمات الحديثة أنظمة إدارة الأداء باستخدام مؤشرات مدفوعة بالبيانات.</p>
+            <span class="read-more-link inline-read">اقرأ المقال ←</span>
+          </div>
+          <span class="article-row-time">٩ د</span>
+        </a>
+      </div>
+    </main>
+    <aside class="topics-sidebar">
+      <p class="sidebar-label">المواضيع</p>
+      <ul class="sidebar-list">
+        <li class="sidebar-item active" data-topic="all" onclick="filterTopic('all',this)">الكل <span class="sidebar-count">5</span></li>
+        <li class="sidebar-item" data-topic="ai" onclick="filterTopic('ai',this)">الذكاء الاصطناعي <span class="sidebar-count">1</span></li>
+        <li class="sidebar-item" data-topic="ml" onclick="filterTopic('ml',this)">تعلم الآلة <span class="sidebar-count">1</span></li>
+        <li class="sidebar-item" data-topic="data" onclick="filterTopic('data',this)">علم البيانات <span class="sidebar-count">2</span></li>
+        <li class="sidebar-item" data-topic="business" onclick="filterTopic('business',this)">إدارة الأعمال <span class="sidebar-count">1</span></li>
+        <li class="sidebar-item" data-topic="strategy" onclick="filterTopic('strategy',this)">الاستراتيجية <span class="sidebar-count">1</span></li>
+      </ul>
+    </aside>
+  </div>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <span class="footer-name">أحمد العبيوي</span>
+      <div class="footer-links">
+        <a href="https://github.com/AhmGh01" target="_blank">GitHub</a>
+        <a href="https://twitter.com/AhGh01_" target="_blank">X (تويتر)</a>
+        <a href="about.html">عنّي</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    /* ---- Dark Mode ---- */
+    const moonSVG = '<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>';
+    const sunSVG  = '<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>';
+    const btn = document.getElementById('darkToggle');
+    const themeIcon = btn.querySelector('.theme-icon');
+    function applyDark(on) {
+      document.documentElement.classList.toggle('dark-mode', on);
+      document.body.classList.toggle('dark-mode', on);
+      themeIcon.innerHTML = on ? sunSVG : moonSVG;
+      btn.setAttribute('aria-label', on ? 'التبديل إلى الوضع النهاري' : 'التبديل إلى الوضع الليلي');
+    }
+    applyDark(localStorage.getItem('darkMode') === 'on');
+    btn.addEventListener('click', () => {
+      const isDark = document.body.classList.contains('dark-mode');
+      localStorage.setItem('darkMode', isDark ? 'off' : 'on');
+      applyDark(!isDark);
+    });
+
+    /* ---- Font Size ---- */
+    const fsLevels = ['sm','md','lg','xl'];
+    let fsIndex = fsLevels.indexOf(localStorage.getItem('fontSize') || 'md');
+    if(fsIndex === -1) fsIndex = 1;
+    function applyFs() {
+      document.documentElement.setAttribute('data-fs', fsLevels[fsIndex]);
+      localStorage.setItem('fontSize', fsLevels[fsIndex]);
+      document.getElementById('fsDecrease').disabled = fsIndex === 0;
+      document.getElementById('fsIncrease').disabled = fsIndex === fsLevels.length - 1;
+      document.getElementById('fsDecrease').style.opacity = fsIndex === 0 ? '0.35' : '1';
+      document.getElementById('fsIncrease').style.opacity = fsIndex === fsLevels.length - 1 ? '0.35' : '1';
+    }
+    document.getElementById('fsDecrease').addEventListener('click', () => { if(fsIndex > 0){ fsIndex--; applyFs(); } });
+    document.getElementById('fsIncrease').addEventListener('click', () => { if(fsIndex < fsLevels.length-1){ fsIndex++; applyFs(); } });
+    applyFs();
+
+    /* ---- Topic Filter ---- */
+    function filterTopic(topic, el) {
+      document.querySelectorAll('.sidebar-item').forEach(i => i.classList.remove('active'));
+      el.classList.add('active');
+      const featured = document.querySelector('.article-featured');
+      const rows = document.querySelectorAll('.article-row');
+      if (topic === 'all') {
+        featured && featured.classList.remove('article-hidden');
+        rows.forEach(r => r.classList.remove('article-hidden'));
+      } else {
+        if (featured) featured.classList.toggle('article-hidden', !(featured.dataset.topics||'').split(' ').includes(topic));
+        rows.forEach(r => r.classList.toggle('article-hidden', !(r.dataset.topics||'').split(' ').includes(topic)));
+      }
+    }
+  </script>
+</body>
+</html>

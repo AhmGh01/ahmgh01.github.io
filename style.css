@@ -3,7 +3,6 @@
    Ahmed Al-Obaiwi — ahmgh01.github.io
    ============================================ */
 
-/* ---- FONTS ---- */
 @font-face {
   font-family: 'thmanyahFont';
   src: url('fonts/thmanyahsans-Light.woff2') format('woff2');
@@ -55,7 +54,6 @@
   font-weight: 900; font-style: normal; font-display: swap;
 }
 
-/* ---- RESET & ROOT ---- */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
@@ -74,7 +72,6 @@
   --header-h: 64px;
 }
 
-/* ---- DARK MODE — applied to <html> for instant flash-free load ---- */
 .dark-mode {
   --color-bg:       #141413;
   --color-surface:  #1E1E1C;
@@ -113,7 +110,6 @@ body {
 a { color: inherit; text-decoration: none; }
 img { max-width: 100%; display: block; }
 
-/* ---- CONTAINER ---- */
 .container {
   max-width: var(--max-width);
   margin: 0 auto;
@@ -131,6 +127,22 @@ div.divider.container {
   padding: 0 24px;
   border: none;
   border-top: 1.5px solid var(--color-border);
+}
+
+/* ---- ARTICLE COVER IMAGE ---- */
+.article-cover {
+  margin: 0 0 0 0;
+  border-radius: 12px;
+  overflow: hidden;
+  max-width: var(--max-width);
+}
+.article-cover-img {
+  width: 100%;
+  height: 420px;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  border-radius: 12px;
 }
 
 /* ---- HEADER ---- */
@@ -182,7 +194,6 @@ div.divider.container {
 .nav-link:hover { color: var(--color-text); }
 .nav-link.active { color: var(--color-text); border-bottom-color: var(--color-accent); }
 
-/* ---- DARK MODE BUTTON ---- */
 .dark-btn {
   font-family: var(--font-sans);
   font-size: 0.8rem;
@@ -203,9 +214,7 @@ div.divider.container {
 .dark-btn .btn-moon { font-size: 0.95rem; }
 
 /* ---- HERO ---- */
-.hero {
-  padding: 72px 0 56px;
-}
+.hero { padding: 72px 0 56px; }
 .hero-eyebrow {
   font-family: var(--font-sans);
   font-size: 0.82rem;
@@ -246,9 +255,7 @@ div.divider.container {
 .tag-data     { background: #EAF0E6; color: var(--color-tag-data); }
 .tag-business { background: #F0EAF0; color: var(--color-tag-biz); }
 
-/* ============================
-   TWO-COLUMN LAYOUT
-   ============================ */
+/* ---- INDEX LAYOUT ---- */
 .index-layout {
   display: flex;
   align-items: flex-start;
@@ -259,7 +266,6 @@ div.divider.container {
 }
 .index-main { flex: 1; min-width: 0; }
 
-/* Sidebar: order:1 in RTL places it visually on the LEFT */
 .topics-sidebar {
   width: 175px;
   flex-shrink: 0;
@@ -373,7 +379,7 @@ div.divider.container {
 .article-divider { border-top: 1px solid var(--color-border); }
 
 /* ---- ARTICLE PAGE ---- */
-.article-hero { padding: 48px 0 32px; }
+.article-hero { padding: 48px 0 28px; }
 .back-nav {
   display: inline-block;
   font-family: var(--font-sans);
@@ -406,7 +412,7 @@ div.divider.container {
   font-family: var(--font-sans); font-size: 0.85rem; color: var(--color-muted);
 }
 .meta-dot { color: var(--color-border); }
-.article-body { max-width: 680px; padding-bottom: 80px; }
+.article-body { max-width: 680px; padding: 40px 0 80px; }
 .article-lead {
   font-family: var(--font-serif);
   font-size: 1.18rem;
@@ -489,6 +495,7 @@ div.divider.container {
 @media (max-width: 860px) {
   .index-layout { gap: 32px; }
   .topics-sidebar { width: 150px; }
+  .article-cover-img { height: 300px; }
 }
 @media (max-width: 680px) {
   .index-layout { flex-direction: column; padding: 0 16px 60px; }
@@ -510,6 +517,7 @@ div.divider.container {
   .article-row-time { display: none; }
   .footer-inner { flex-direction: column; gap: 16px; text-align: center; }
   .featured-footer { flex-direction: column; align-items: flex-start; gap: 8px; }
+  .article-cover-img { height: 200px; }
 }
 @media (max-width: 480px) {
   .site-nav { gap: 14px; }

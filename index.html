@@ -197,20 +197,16 @@
 
     /* ---- Font Size ---- */
     const fsLevels = ['sm','md','lg','xl'];
-    let fsCurrent = localStorage.getItem('fontSize') || 'md';
-    function applyFs(level) {
-      fsCurrent = level;
-      document.documentElement.setAttribute('data-fs', level);
-      localStorage.setItem('fontSize', level);
+    let fsIndex = fsLevels.indexOf(localStorage.getItem('fontSize') || 'md');
+    function applyFs() {
+      document.documentElement.setAttribute('data-fs', fsLevels[fsIndex]);
+      localStorage.setItem('fontSize', fsLevels[fsIndex]);
+      document.getElementById('fsDecrease').style.opacity = fsIndex === 0 ? '0.35' : '1';
+      document.getElementById('fsIncrease').style.opacity = fsIndex === fsLevels.length - 1 ? '0.35' : '1';
     }
-    document.getElementById('fsIncrease').addEventListener('click', () => {
-      const idx = fsLevels.indexOf(fsCurrent);
-      if (idx < fsLevels.length - 1) applyFs(fsLevels[idx + 1]);
-    });
-    document.getElementById('fsDecrease').addEventListener('click', () => {
-      const idx = fsLevels.indexOf(fsCurrent);
-      if (idx > 0) applyFs(fsLevels[idx - 1]);
-    });
+    document.getElementById('fsDecrease').addEventListener('click', () => { if (fsIndex > 0) { fsIndex--; applyFs(); } });
+    document.getElementById('fsIncrease').addEventListener('click', () => { if (fsIndex < fsLevels.length - 1) { fsIndex++; applyFs(); } });
+    applyFs();
 
     /* ---- Topic Filter ---- */
     function filterTopic(topic, el) {

@@ -88,23 +88,45 @@
       font-family: var(--font-sans);
       font-size: 1rem;
       color: var(--color-muted);
-      margin-bottom: 20px;
+      margin-bottom: 24px;
     }
-    .contact-row { display: flex; gap: 20px; flex-wrap: wrap; }
+    .contact-row {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
     .contact-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
       font-family: var(--font-sans);
-      font-size: 0.92rem;
+      font-size: 0.88rem;
       font-weight: 600;
-      color: var(--color-accent);
+      color: var(--color-text);
       text-decoration: none;
-      border-bottom: 1.5px solid transparent;
-      transition: border-color 0.2s;
+      padding: 9px 16px;
+      border: 1.5px solid var(--color-border);
+      border-radius: 8px;
+      transition: border-color 0.2s, background 0.2s, color 0.2s;
+      background: transparent;
     }
-    .contact-link:hover { border-bottom-color: var(--color-accent); }
+    .contact-link:hover {
+      border-color: var(--color-text);
+      background: var(--color-text);
+      color: var(--color-bg);
+    }
+    .contact-link:hover svg { stroke: var(--color-bg); }
+    .contact-link svg {
+      flex-shrink: 0;
+      stroke: var(--color-text);
+      transition: stroke 0.2s;
+    }
     @media (max-width: 640px) {
       .timeline-item { flex-direction: column; gap: 6px; }
       .timeline-year { min-width: auto; }
       .skills-grid { grid-template-columns: 1fr; gap: 24px; }
+      .contact-row { gap: 10px; }
+      .contact-link { font-size: 0.82rem; padding: 8px 12px; }
     }
   </style>
 </head>
@@ -257,9 +279,43 @@
       <h2 class="about-section-title">تواصل معي</h2>
       <p>يسعدني التواصل للحديث عن علم البيانات، التطوير المؤسسي، أو أي تعاون مهني.</p>
       <div class="contact-row">
-        <a href="mailto:Ahmedalmutairi230@gmail.com" class="contact-link">البريد الإلكتروني ←</a>
-        <a href="https://github.com/AhmGh01" target="_blank" class="contact-link">GitHub ←</a>
-        <a href="https://twitter.com/AhGh01_" target="_blank" class="contact-link">X (تويتر) ←</a>
+
+        <!-- Email -->
+        <a href="mailto:Ahmedalmutairi230@gmail.com" class="contact-link" aria-label="البريد الإلكتروني">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <rect x="2" y="4" width="20" height="16" rx="2"/>
+            <path d="m2 7 10 7 10-7"/>
+          </svg>
+          البريد الإلكتروني
+        </a>
+
+        <!-- LinkedIn -->
+        <a href="https://www.linkedin.com/in/ahmedgalmutairi" target="_blank" rel="noopener noreferrer" class="contact-link" aria-label="LinkedIn">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <rect x="2" y="2" width="20" height="20" rx="4"/>
+            <path d="M7 10v7"/>
+            <circle cx="7" cy="7" r="1" fill="currentColor" stroke="none"/>
+            <path d="M11 10v7m0-4c0-2 6-2 6 0v4"/>
+          </svg>
+          LinkedIn
+        </a>
+
+        <!-- GitHub -->
+        <a href="https://github.com/AhmGh01" target="_blank" rel="noopener noreferrer" class="contact-link" aria-label="GitHub">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/>
+          </svg>
+          GitHub
+        </a>
+
+        <!-- X / Twitter -->
+        <a href="https://twitter.com/AhGh01_" target="_blank" rel="noopener noreferrer" class="contact-link" aria-label="X (تويتر)">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M4 4 l16 16 M20 4 L4 20"/>
+          </svg>
+          X (تويتر)
+        </a>
+
       </div>
     </div>
 
@@ -271,6 +327,7 @@
       <nav class="footer-links">
         <a href="index.html">المدونة</a>
         <a href="about.html">عنّي</a>
+        <a href="https://www.linkedin.com/in/ahmedgalmutairi" target="_blank" rel="noopener">LinkedIn</a>
         <a href="https://github.com/AhmGh01" target="_blank" rel="noopener">GitHub</a>
         <a href="https://twitter.com/AhGh01_" target="_blank" rel="noopener">X (تويتر)</a>
       </nav>

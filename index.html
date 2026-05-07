@@ -24,6 +24,27 @@
     }
     .footer-icon-link:hover { color: var(--color-text); }
     .footer-icon-link svg { display: block; }
+
+    /* صور المقالات في الصفحة الرئيسية */
+    .featured-thumb {
+      width: 100%;
+      aspect-ratio: 16/7;
+      object-fit: cover;
+      border-radius: 10px;
+      margin-bottom: 20px;
+      display: block;
+    }
+    .row-thumb {
+      width: 88px;
+      height: 64px;
+      object-fit: cover;
+      border-radius: 7px;
+      flex-shrink: 0;
+      order: -1;
+    }
+    @media (max-width: 520px) {
+      .row-thumb { width: 72px; height: 54px; }
+    }
   </style>
 </head>
 <body>
@@ -63,6 +84,7 @@
           <span class="tag tag-ai">الذكاء الاصطناعي</span>
           <span class="article-date">الخميس، ٧ مايو ٢٠٢٦</span>
         </div>
+        <img src="img_neural.png" alt="الشبكات العصبية الاصطناعية" class="featured-thumb" loading="lazy">
         <h2 class="featured-title">الشبكات العصبية الاصطناعية: كيف يتعلم الكمبيوتر كما يتعلم الإنسان؟</h2>
         <p class="featured-excerpt">استكشاف معمّق لمبادئ الشبكات العصبية الاصطناعية، وكيف تحاكي عمل الدماغ البشري في التعلم وحل المشكلات المعقدة.</p>
         <div class="featured-footer">
@@ -73,6 +95,7 @@
       <div class="divider"></div>
       <div class="articles-list">
         <a href="article-sentiment-analysis.html" class="article-row" data-topics="data">
+          <img src="img_sentiment.png" alt="تحليل المشاعر" class="row-thumb" loading="lazy">
           <div class="article-row-body">
             <div class="article-row-meta"><span class="tag tag-data">علم البيانات</span><span class="article-date">الخميس، ٧ مايو ٢٠٢٦</span></div>
             <h3 class="article-row-title">تحليل المشاعر باستخدام Python وNLP: دليل عملي من الصفر</h3>
@@ -83,6 +106,7 @@
         </a>
         <div class="article-divider"></div>
         <a href="article-data-driven-decisions.html" class="article-row" data-topics="business strategy">
+          <img src="img_decisions.png" alt="القرارات المبنية على البيانات" class="row-thumb" loading="lazy">
           <div class="article-row-body">
             <div class="article-row-meta"><span class="tag tag-business">إدارة الأعمال</span><span class="article-date">الخميس، ٧ مايو ٢٠٢٦</span></div>
             <h3 class="article-row-title">كيف تستخدم البيانات في اتخاذ قرارات استراتيجية أذكى؟</h3>
@@ -93,6 +117,7 @@
         </a>
         <div class="article-divider"></div>
         <a href="article-random-forest.html" class="article-row" data-topics="ml">
+          <img src="img_forest.png" alt="خوارزمية Random Forest" class="row-thumb" loading="lazy">
           <div class="article-row-body">
             <div class="article-row-meta"><span class="tag tag-ai">تعلم الآلة</span><span class="article-date">الخميس، ٧ مايو ٢٠٢٦</span></div>
             <h3 class="article-row-title">خوارزمية Random Forest: الدليل الشامل مع تطبيق عملي</h3>
@@ -103,6 +128,7 @@
         </a>
         <div class="article-divider"></div>
         <a href="article-apache-spark.html" class="article-row" data-topics="data">
+          <img src="img_spark.png" alt="Apache Spark" class="row-thumb" loading="lazy">
           <div class="article-row-body">
             <div class="article-row-meta"><span class="tag tag-data">Big Data</span><span class="article-date">الخميس، ٧ مايو ٢٠٢٦</span></div>
             <h3 class="article-row-title">معالجة البيانات الضخمة مع Apache Spark: من النظرية إلى التطبيق</h3>
@@ -113,6 +139,7 @@
         </a>
         <div class="article-divider"></div>
         <a href="article-performance-management.html" class="article-row" data-topics="strategy">
+          <img src="img_performance.png" alt="إدارة الأداء المؤسسي" class="row-thumb" loading="lazy">
           <div class="article-row-body">
             <div class="article-row-meta"><span class="tag tag-business">استراتيجية</span><span class="article-date">الخميس، ٧ مايو ٢٠٢٦</span></div>
             <h3 class="article-row-title">نماذج إدارة الأداء المؤسسي في عصر البيانات ورؤية ٢٠٣٠</h3>

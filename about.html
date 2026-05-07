@@ -11,6 +11,102 @@
   </script>
   <link rel="icon" type="image/png" href="brain_icon.png">
   <link rel="stylesheet" href="style.css">
+  <style>
+    /* ---- ABOUT PAGE EXTENDED STYLES ---- */
+    .about-content { padding-bottom: 80px; }
+    .about-section { margin-bottom: 48px; }
+    .about-section-title {
+      font-family: var(--font-serif);
+      font-size: 1.35rem;
+      font-weight: 800;
+      color: var(--color-text);
+      margin-bottom: 20px;
+      padding-bottom: 10px;
+      border-bottom: 1.5px solid var(--color-border);
+    }
+    .about-section p {
+      font-family: var(--font-sans);
+      font-size: 1rem;
+      line-height: 1.85;
+      color: var(--color-muted);
+      margin-bottom: 14px;
+      max-width: 680px;
+    }
+    /* Timeline */
+    .timeline { display: flex; flex-direction: column; gap: 28px; }
+    .timeline-item { display: flex; gap: 24px; align-items: flex-start; }
+    .timeline-year {
+      font-family: var(--font-sans);
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: var(--color-accent);
+      min-width: 110px;
+      padding-top: 4px;
+      letter-spacing: 0.02em;
+    }
+    .timeline-body { flex: 1; }
+    .timeline-title {
+      font-family: var(--font-serif);
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--color-text);
+      margin-bottom: 6px;
+      line-height: 1.4;
+    }
+    .timeline-desc {
+      font-family: var(--font-sans);
+      font-size: 0.92rem;
+      color: var(--color-muted);
+      line-height: 1.7;
+    }
+    /* Skills grid */
+    .skills-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
+    .skill-group-title {
+      font-family: var(--font-sans);
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--color-accent);
+      margin-bottom: 12px;
+    }
+    .skill-list { list-style: none; padding: 0; margin: 0; }
+    .skill-list li {
+      font-family: var(--font-sans);
+      font-size: 0.92rem;
+      color: var(--color-text);
+      padding: 7px 0;
+      border-bottom: 1px solid var(--color-border);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .skill-list li:last-child { border-bottom: none; }
+    .skill-list li::before { content: '◆'; font-size: 0.4rem; color: var(--color-accent); flex-shrink: 0; }
+    /* Contact */
+    .about-contact p {
+      font-family: var(--font-sans);
+      font-size: 1rem;
+      color: var(--color-muted);
+      margin-bottom: 20px;
+    }
+    .contact-row { display: flex; gap: 20px; flex-wrap: wrap; }
+    .contact-link {
+      font-family: var(--font-sans);
+      font-size: 0.92rem;
+      font-weight: 600;
+      color: var(--color-accent);
+      text-decoration: none;
+      border-bottom: 1.5px solid transparent;
+      transition: border-color 0.2s;
+    }
+    .contact-link:hover { border-bottom-color: var(--color-accent); }
+    @media (max-width: 640px) {
+      .timeline-item { flex-direction: column; gap: 6px; }
+      .timeline-year { min-width: auto; }
+      .skills-grid { grid-template-columns: 1fr; gap: 24px; }
+    }
+  </style>
 </head>
 <body>
   <header class="site-header">
@@ -42,52 +138,132 @@
 
   <div class="divider container"></div>
 
-  <section class="about-section">
-    <div class="container">
-      <p class="about-bio">أنا أحمد العبيوي، متخصص في تحليل البيانات وإدارة الأعمال من الرياض. أجمع بين الخلفية الأكاديمية في علوم البيانات والخبرة العملية في الاستشارات الإدارية. أكتب في هذه المدونة عن التقاطع بين البيانات، الذكاء الاصطناعي، وقرارات الأعمال.</p>
+  <main class="container about-content">
 
-      <div class="about-grid">
-        <div class="about-card">
-          <div class="about-card-label">المهارات التقنية</div>
-          <ul>
-            <li>Python وتحليل البيانات</li>
-            <li>التعلم الآلي والذكاء الاصطناعي</li>
-            <li>Apache Spark والبيانات الضخمة</li>
-            <li>SQL وقواعد البيانات</li>
-            <li>تصوير البيانات (Tableau, Power BI)</li>
+    <div class="about-section">
+      <h2 class="about-section-title">عنّي</h2>
+      <p>أنا أحمد العبيوي، مهتم بالإدارة الاستراتيجية وعلم البيانات وتحليل الأعمال، وأسعى إلى توظيف المعرفة التحليلية لدعم القرارات وصناعة الأثر.</p>
+      <p>كما أركز على إدارة المشاريع وتحسين الأداء وتطوير الحلول التي تربط بين الرؤية الاستراتيجية والتطبيق العملي.</p>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="about-section">
+      <h2 class="about-section-title">الخبرة المهنية</h2>
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-year">٢٠١٨ — الحاضر</div>
+          <div class="timeline-body">
+            <h3 class="timeline-title">مدير شعبة في التميز المؤسسي — جهة حكومية</h3>
+            <p class="timeline-desc">الإشراف على الهياكل التنظيمية وتحديثها، وإعداد دليل المهام والمسؤوليات، وإدارة مشروع إعداد الدليل الوظيفي، والمشاركة في تحديث الخطة الاستراتيجية ومشاريع الجودة والتميز المؤسسي.</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-year">٢٠٢١ — ٢٠٢٥</div>
+          <div class="timeline-body">
+            <h3 class="timeline-title">محاضر متخصص — معهد تابع للجهة</h3>
+            <p class="timeline-desc">تقديم برامج تدريبية في إدارة المشاريع، المهارات الإدارية، والإدارة الاستراتيجية.</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-year">٢٠١٥</div>
+          <div class="timeline-body">
+            <h3 class="timeline-title">متدرب — مدينة الملك عبدالعزيز للعلوم والتقنية (KACST)</h3>
+            <p class="timeline-desc">العمل في المديرية العامة للمعلوماتية، والمشاركة في تطوير واختبار التطبيقات البرمجية.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="about-section">
+      <h2 class="about-section-title">التعليم</h2>
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-year">٢٠٢٥ — ٢٠٢٧</div>
+          <div class="timeline-body">
+            <h3 class="timeline-title">ماجستير علم البيانات — الجامعة العربية السعودية الإلكترونية</h3>
+            <p class="timeline-desc">تخصص في علم البيانات والذكاء الاصطناعي.</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-year">٢٠١٦</div>
+          <div class="timeline-body">
+            <h3 class="timeline-title">بكالوريوس إدارة الأعمال — تخصص نظم المعلومات الإدارية — جامعة الملك سعود</h3>
+            <p class="timeline-desc">دراسة تجمع بين عمق التخصص في نظم المعلومات والإدارة.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="about-section">
+      <h2 class="about-section-title">أبرز الشهادات والدورات</h2>
+      <div class="skills-grid">
+        <div class="skill-group">
+          <h3 class="skill-group-title">الإدارة والأعمال</h3>
+          <ul class="skill-list">
+            <li>PMP — محترف إدارة المشاريع | ٢٠٢٣</li>
+            <li>SHRM-ACHRM — إدارة الموارد البشرية | ٢٠٢٥</li>
+            <li>التخطيط الاستراتيجي | جامعة الملك سعود | ٢٠١٩</li>
+            <li>الإدارة الاستراتيجية | مركز قياس | ٢٠٢١</li>
           </ul>
         </div>
-        <div class="about-card">
-          <div class="about-card-label">الاهتمامات</div>
-          <ul>
-            <li>إدارة الأداء المؤسسي</li>
-            <li>التحول الرقمي في الأعمال</li>
-            <li>القرارات المبنية على البيانات</li>
-            <li>الذكاء الاصطناعي التوليدي</li>
-            <li>ريادة الأعمال والابتكار</li>
-          </ul>
-        </div>
-        <div class="about-card">
-          <div class="about-card-label">التعليم</div>
-          <ul>
-            <li>ماجستير في علوم البيانات</li>
-            <li>جامعة الجنوب الشرقي</li>
-            <li>دورات متخصصة في الذكاء الاصطناعي</li>
-            <li>شهادات في إدارة المشاريع</li>
-          </ul>
-        </div>
-        <div class="about-card">
-          <div class="about-card-label">تواصل معي</div>
-          <ul>
-            <li>GitHub: AhmGh01</li>
-            <li>الرياض، المملكة العربية السعودية</li>
-            <li>متاح للتعاون في المشاريع</li>
-            <li>استشارات في تحليل البيانات</li>
+        <div class="skill-group">
+          <h3 class="skill-group-title">البيانات والتقنية</h3>
+          <ul class="skill-list">
+            <li>Microsoft Power BI | MCIT | ٢٠٢٤</li>
+            <li>Mathematics for Artificial Intelligence | KAUST Academy | ٢٠٢٣</li>
+            <li>MCIT Jr Data Scientist | INE | ٢٠٢٥</li>
+            <li>دبلوم تعليمي — علوم الحاسب والتقنية | جامعة الملك سعود</li>
+            <li>دبلوم تعليمي — علوم الحاسب التطبيقية | جامعة الملك سعود</li>
           </ul>
         </div>
       </div>
     </div>
-  </section>
+
+    <div class="divider"></div>
+
+    <div class="about-section">
+      <h2 class="about-section-title">المهارات</h2>
+      <div class="skills-grid">
+        <div class="skill-group">
+          <h3 class="skill-group-title">التقنية</h3>
+          <ul class="skill-list">
+            <li>Python — تحليل البيانات وتعلم الآلة</li>
+            <li>Power BI — لوحات قيادية تفاعلية</li>
+            <li>بناء مؤشرات الأداء KPIs</li>
+            <li>تحليل البيانات والأعمال</li>
+            <li>Microsoft Office المتقدم</li>
+          </ul>
+        </div>
+        <div class="skill-group">
+          <h3 class="skill-group-title">الإدارة والقيادة</h3>
+          <ul class="skill-list">
+            <li>إدارة المشاريع والفرق</li>
+            <li>التخطيط الاستراتيجي والتطوير المؤسسي</li>
+            <li>تحليل الأعمال والهياكل التنظيمية</li>
+            <li>مهارات التواصل وحل المشكلات</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="about-section about-contact">
+      <h2 class="about-section-title">تواصل معي</h2>
+      <p>يسعدني التواصل للحديث عن علم البيانات، التطوير المؤسسي، أو أي تعاون مهني.</p>
+      <div class="contact-row">
+        <a href="mailto:Ahmedalmutairi230@gmail.com" class="contact-link">البريد الإلكتروني ←</a>
+        <a href="https://github.com/AhmGh01" target="_blank" class="contact-link">GitHub ←</a>
+        <a href="https://twitter.com/AhGh01_" target="_blank" class="contact-link">X (تويتر) ←</a>
+      </div>
+    </div>
+
+  </main>
 
   <footer class="site-footer">
     <div class="container footer-inner">
@@ -96,6 +272,7 @@
         <a href="index.html">المدونة</a>
         <a href="about.html">عنّي</a>
         <a href="https://github.com/AhmGh01" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://twitter.com/AhGh01_" target="_blank" rel="noopener">X (تويتر)</a>
       </nav>
     </div>
   </footer>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>خوارزمية Random Forest — أحمد العبيوي</title>
+  <script>
+    if(localStorage.getItem('darkMode')==='on') document.documentElement.classList.add('dark-mode');
+    var fs = localStorage.getItem('fontSize') || 'md';
+    document.documentElement.setAttribute('data-fs', fs);
+  </script>
+  <link rel="icon" type="image/png" href="brain_icon.png">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .footer-icon-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--color-muted);
+      transition: color 0.2s;
+      line-height: 1;
+    }
+    .footer-icon-link:hover { color: var(--color-text); }
+    .footer-icon-link svg { display: block; }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="site-logo"><img src="brain_icon.png" alt="أيقونة" class="site-logo-icon">أحمد العبيوي</a>
+      <nav class="site-nav">
+        <a href="index.html" class="nav-link">المدونة</a>
+        <a href="about.html" class="nav-link">عنّي</a>
+        <div class="font-size-controls" aria-label="حجم الخط">
+          <button class="font-size-btn" id="fsDecrease" aria-label="تصغير الخط" title="تصغير الخط">أ−</button>
+          <span class="font-size-divider"></span>
+          <button class="font-size-btn" id="fsIncrease" aria-label="تكبير الخط" title="تكبير الخط">أ+</button>
+        </div>
+        <button class="dark-btn" id="darkToggle" aria-label="تبديل النمط"><span class="btn-moon">🌙</span><span class="btn-label">الوضع الليلي</span></button>
+      </nav>
+    </div>
+  </header>
+  <div class="container">
+    <div class="article-hero">
+      <a href="index.html" class="back-nav">← العودة للمدونة</a>
+      <p class="eyebrow">تعلم الآلة</p>
+      <h1 class="article-title">خوارزمية Random Forest: الدليل الشامل مع تطبيق عملي</h1>
+      <div class="article-meta"><span>الخميس، ٧ مايو ٢٠٢٦</span><span class="meta-dot">·</span><span>١٥ دقائق للقراءة</span></div>
+    </div>
+    <div class="article-cover"><img src="img_forest.png" alt="خوارزمية Random Forest" class="article-cover-img" loading="lazy"></div>
+    <hr class="divider">
+    <div class="article-body">
+      <p class="article-lead">شرح معمّق لخوارزمية الغابة العشوائية مع تطبيق عملي وتحليل مقارن للأداء.</p>
+      <h2>مفهوم الغابة العشوائية</h2>
+      <p>Random Forest هي خوارزمية تعلم تجميعي تبني مئات من أشجار القرار المستقلة وتدمج نتائجها للحصول على تنبؤ أكثر دقة وأقل عرضة للإفراط في التخصيص.</p>
+      <h2>مزايا الخوارزمية</h2>
+      <p>تتميز الخوارزمية بقدرتها على التعامل مع البيانات المفقودة، وعدم الحساسية للقيم الشاذة، وإمكانية قياس أهمية كل ميزة في التنبؤ.</p>
+      <h2>تطبيق بـ Python</h2>
+      <p>يمكن تطبيق الخوارزمية بسهولة عبر scikit-learn مع ضبط المعاملات مثل عدد الأشجار وعمق الشجرة لتحقيق أفضل أداء على البيانات المستهدفة.</p>
+      <div class="article-footer-nav"><a href="index.html" class="back-link">← العودة للمدونة</a></div>
+    </div>
+  </div>
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <span class="footer-name">أحمد العبيوي</span>
+      <nav class="footer-links">
+        <a href="https://www.linkedin.com/in/ahmedgalmutairi" target="_blank" rel="noopener" class="footer-icon-link" aria-label="LinkedIn" title="LinkedIn">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="4"/><path d="M7 10v7"/><circle cx="7" cy="7" r="1" fill="currentColor" stroke="none"/><path d="M11 10v7m0-4c0-2 6-2 6 0v4"/></svg>
+        </a>
+        <a href="https://github.com/AhmGh01" target="_blank" rel="noopener" class="footer-icon-link" aria-label="GitHub" title="GitHub">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/></svg>
+        </a>
+        <a href="https://twitter.com/AhGh01_" target="_blank" rel="noopener" class="footer-icon-link" aria-label="X" title="X">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4l16 16M20 4L4 20"/></svg>
+        </a>
+      </nav>
+    </div>
+  </footer>
+  <script>
+    const btn=document.getElementById('darkToggle'),label=btn.querySelector('.btn-label');
+    function applyDark(on){document.documentElement.classList.toggle('dark-mode',on);document.body.classList.toggle('dark-mode',on);label.textContent=on?'الوضع النهاري':'الوضع الليلي';}
+    applyDark(localStorage.getItem('darkMode')==='on');
+    btn.addEventListener('click',()=>{const d=document.body.classList.contains('dark-mode');localStorage.setItem('darkMode',d?'off':'on');applyDark(!d);});
+    const fsLevels=['sm','md','lg','xl'];let fsIndex=fsLevels.indexOf(localStorage.getItem('fontSize')||'md');
+    function applyFs(){document.documentElement.setAttribute('data-fs',fsLevels[fsIndex]);localStorage.setItem('fontSize',fsLevels[fsIndex]);document.getElementById('fsDecrease').style.opacity=fsIndex===0?'0.35':'1';document.getElementById('fsIncrease').style.opacity=fsIndex===fsLevels.length-1?'0.35':'1';}
+    document.getElementById('fsDecrease').addEventListener('click',()=>{if(fsIndex>0){fsIndex--;applyFs();}});
+    document.getElementById('fsIncrease').addEventListener('click',()=>{if(fsIndex<fsLevels.length-1){fsIndex++;applyFs();}});
+    applyFs();
+  </script>
+</body>
+</html>

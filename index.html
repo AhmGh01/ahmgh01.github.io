@@ -3,12 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>أحمد العبيوي — مدونة في علوم البيانات والإدارة الإستراتيجية</title>
+  <title>أحمد العبيوي — مدونة في علوم البيانات والإدارة</title>
   <link rel="icon" type="image/png" href="brain_icon.png">
   <link rel="apple-touch-icon" href="brain_icon.png">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
+  <!-- HEADER -->
   <header class="site-header">
     <div class="container header-inner">
       <a href="index.html" class="site-logo">
@@ -18,14 +20,15 @@
       <nav class="site-nav">
         <a href="index.html" class="nav-link active">المدونة</a>
         <a href="about.html" class="nav-link">عنّي</a>
-        <div class="dark-toggle-wrap">
-          <span class="dark-toggle-label">ليلي</span>
-          <button class="dark-toggle" id="darkToggle" aria-label="تبديل النمط الليلي"></button>
-        </div>
+        <button class="dark-btn" id="darkToggle" aria-label="تبديل النمط">
+          <span class="btn-moon">🌙</span>
+          <span class="btn-label">الوضع الليلي</span>
+        </button>
       </nav>
     </div>
   </header>
 
+  <!-- HERO -->
   <section class="hero">
     <div class="container">
       <p class="hero-eyebrow">مدونة في البيانات والذكاء الاصطناعي</p>
@@ -36,50 +39,17 @@
 
   <div class="divider container"></div>
 
-  <div class="page-with-sidebar">
-    <!-- قائمة المواضيع الجانبية -->
-    <aside class="topics-sidebar">
-      <p class="sidebar-title">المواضيع</p>
-      <ul class="sidebar-topics">
-        <li class="sidebar-topic-item active" data-topic="all" onclick="filterTopic('all', this)">
-          <span class="sidebar-topic-icon">📚</span>
-          الكل
-          <span class="sidebar-count">٥</span>
-        </li>
-        <li class="sidebar-topic-item" data-topic="ai" onclick="filterTopic('ai', this)">
-          <span class="sidebar-topic-icon">🤖</span>
-          الذكاء الاصطناعي
-          <span class="sidebar-count">١</span>
-        </li>
-        <li class="sidebar-topic-item" data-topic="ml" onclick="filterTopic('ml', this)">
-          <span class="sidebar-topic-icon">🧠</span>
-          تعلم الآلة
-          <span class="sidebar-count">١</span>
-        </li>
-        <li class="sidebar-topic-item" data-topic="data" onclick="filterTopic('data', this)">
-          <span class="sidebar-topic-icon">📊</span>
-          علم البيانات
-          <span class="sidebar-count">٢</span>
-        </li>
-        <li class="sidebar-topic-item" data-topic="business" onclick="filterTopic('business', this)">
-          <span class="sidebar-topic-icon">💼</span>
-          إدارة الأعمال
-          <span class="sidebar-count">١</span>
-        </li>
-        <li class="sidebar-topic-item" data-topic="strategy" onclick="filterTopic('strategy', this)">
-          <span class="sidebar-topic-icon">🎯</span>
-          الاستراتيجية
-          <span class="sidebar-count">١</span>
-        </li>
-      </ul>
-    </aside>
+  <!-- TWO-COLUMN LAYOUT -->
+  <div class="index-layout">
 
-    <!-- المحتوى الرئيسي -->
-    <main class="main-content articles-page">
+    <!-- ARTICLES (right column in RTL = order 0) -->
+    <main class="index-main" id="articlesMain">
+
+      <!-- Featured -->
       <a href="article-neural-networks.html" class="article-featured" data-topics="ai">
         <div class="featured-meta">
           <span class="tag tag-ai">الذكاء الاصطناعي</span>
-          <span class="article-date">الخميس، ٧ مايو ٢٠٢٦ · ١:٢٣ ص</span>
+          <span class="article-date">الخميس، ٧ مايو ٢٠٢٦</span>
         </div>
         <h2 class="featured-title">الشبكات العصبية الاصطناعية: كيف يتعلم الكمبيوتر كما يتعلم الإنسان؟</h2>
         <p class="featured-excerpt">استكشاف معمّق لمبادئ الشبكات العصبية الاصطناعية، وكيف تحاكي عمل الدماغ البشري في التعلم وحل المشكلات المعقدة.</p>
@@ -91,10 +61,11 @@
 
       <div class="divider"></div>
 
+      <!-- List -->
       <div class="articles-list">
         <a href="article-sentiment-analysis.html" class="article-row" data-topics="data">
           <div class="article-row-body">
-            <div class="article-row-meta"><span class="tag tag-data">علم البيانات</span><span class="article-date">الخميس، ٧ مايو ٢٠٢٦ · ١:٢٣ ص</span></div>
+            <div class="article-row-meta"><span class="tag tag-data">علم البيانات</span><span class="article-date">الخميس، ٧ مايو ٢٠٢٦</span></div>
             <h3 class="article-row-title">تحليل المشاعر باستخدام Python وNLP: دليل عملي من الصفر</h3>
             <p class="article-row-excerpt">دليل عملي لبناء نموذج تحليل المشاعر من الصفر باستخدام مكتبات Python الحديثة.</p>
             <span class="read-more-link inline-read">اقرأ المقال ←</span>
@@ -104,7 +75,7 @@
         <div class="article-divider"></div>
         <a href="article-data-driven-decisions.html" class="article-row" data-topics="business strategy">
           <div class="article-row-body">
-            <div class="article-row-meta"><span class="tag tag-business">إدارة الأعمال</span><span class="article-date">الخميس، ٧ مايو ٢٠٢٦ · ١:٢٣ ص</span></div>
+            <div class="article-row-meta"><span class="tag tag-business">إدارة الأعمال</span><span class="article-date">الخميس، ٧ مايو ٢٠٢٦</span></div>
             <h3 class="article-row-title">كيف تستخدم البيانات في اتخاذ قرارات استراتيجية أذكى؟</h3>
             <p class="article-row-excerpt">منهجية متكاملة لتوظيف تحليل البيانات في دعم القرارات على مستوى الإدارة العليا.</p>
             <span class="read-more-link inline-read">اقرأ المقال ←</span>
@@ -114,7 +85,7 @@
         <div class="article-divider"></div>
         <a href="article-random-forest.html" class="article-row" data-topics="ml">
           <div class="article-row-body">
-            <div class="article-row-meta"><span class="tag tag-ai">تعلم الآلة</span><span class="article-date">الخميس، ٧ مايو ٢٠٢٦ · ١:٢٣ ص</span></div>
+            <div class="article-row-meta"><span class="tag tag-ai">تعلم الآلة</span><span class="article-date">الخميس، ٧ مايو ٢٠٢٦</span></div>
             <h3 class="article-row-title">خوارزمية Random Forest: الدليل الشامل مع تطبيق عملي</h3>
             <p class="article-row-excerpt">شرح معمّق لخوارزمية الغابة العشوائية مع تطبيق عملي وتحليل مقارن للأداء.</p>
             <span class="read-more-link inline-read">اقرأ المقال ←</span>
@@ -124,7 +95,7 @@
         <div class="article-divider"></div>
         <a href="article-apache-spark.html" class="article-row" data-topics="data">
           <div class="article-row-body">
-            <div class="article-row-meta"><span class="tag tag-data">Big Data</span><span class="article-date">الخميس، ٧ مايو ٢٠٢٦ · ١:٢٣ ص</span></div>
+            <div class="article-row-meta"><span class="tag tag-data">Big Data</span><span class="article-date">الخميس، ٧ مايو ٢٠٢٦</span></div>
             <h3 class="article-row-title">معالجة البيانات الضخمة مع Apache Spark: من النظرية إلى التطبيق</h3>
             <p class="article-row-excerpt">كيفية استخدام Apache Spark لمعالجة وتحليل ملايين السجلات بكفاءة عالية.</p>
             <span class="read-more-link inline-read">اقرأ المقال ←</span>
@@ -134,16 +105,31 @@
         <div class="article-divider"></div>
         <a href="article-performance-management.html" class="article-row" data-topics="strategy">
           <div class="article-row-body">
-            <div class="article-row-meta"><span class="tag tag-business">استراتيجية</span><span class="article-date">الخميس، ٧ مايو ٢٠٢٦ · ١:٢٣ ص</span></div>
+            <div class="article-row-meta"><span class="tag tag-business">استراتيجية</span><span class="article-date">الخميس، ٧ مايو ٢٠٢٦</span></div>
             <h3 class="article-row-title">نماذج إدارة الأداء المؤسسي في عصر البيانات ورؤية ٢٠٣٠</h3>
-            <p class="article-row-excerpt">كيف تحوّل المنظمات الحديثة أنظمة إدارة الأداء لديها باستخدام مؤشرات مدفوعة بالبيانات.</p>
+            <p class="article-row-excerpt">كيف تحوّل المنظمات الحديثة أنظمة إدارة الأداء باستخدام مؤشرات مدفوعة بالبيانات.</p>
             <span class="read-more-link inline-read">اقرأ المقال ←</span>
           </div>
           <span class="article-row-time">٩ د</span>
         </a>
       </div>
     </main>
+
+    <!-- SIDEBAR (left in RTL, order:1) -->
+    <aside class="topics-sidebar">
+      <p class="sidebar-label">المواضيع</p>
+      <ul class="sidebar-list">
+        <li class="sidebar-item active" data-topic="all" onclick="filterTopic('all',this)">الكل <span class="sidebar-count">5</span></li>
+        <li class="sidebar-item" data-topic="ai" onclick="filterTopic('ai',this)">الذكاء الاصطناعي <span class="sidebar-count">1</span></li>
+        <li class="sidebar-item" data-topic="ml" onclick="filterTopic('ml',this)">تعلم الآلة <span class="sidebar-count">1</span></li>
+        <li class="sidebar-item" data-topic="data" onclick="filterTopic('data',this)">علم البيانات <span class="sidebar-count">2</span></li>
+        <li class="sidebar-item" data-topic="business" onclick="filterTopic('business',this)">إدارة الأعمال <span class="sidebar-count">1</span></li>
+        <li class="sidebar-item" data-topic="strategy" onclick="filterTopic('strategy',this)">الاستراتيجية <span class="sidebar-count">1</span></li>
+      </ul>
+    </aside>
+
   </div>
+  <!-- END TWO-COLUMN -->
 
   <footer class="site-footer">
     <div class="container footer-inner">
@@ -157,34 +143,42 @@
   </footer>
 
   <script>
-    // ---- DARK MODE ----
-    const toggle = document.getElementById('darkToggle');
+    /* ---------- DARK MODE (shared via localStorage) ---------- */
+    const btn = document.getElementById('darkToggle');
     const body = document.body;
-    if (localStorage.getItem('darkMode') === 'on') body.classList.add('dark-mode');
-    toggle.addEventListener('click', () => {
-      body.classList.toggle('dark-mode');
-      localStorage.setItem('darkMode', body.classList.contains('dark-mode') ? 'on' : 'off');
+    const label = btn.querySelector('.btn-label');
+
+    function applyDark(on) {
+      body.classList.toggle('dark-mode', on);
+      label.textContent = on ? 'الوضع النهاري' : 'الوضع الليلي';
+    }
+
+    // Apply saved preference on load
+    applyDark(localStorage.getItem('darkMode') === 'on');
+
+    btn.addEventListener('click', () => {
+      const isDark = body.classList.contains('dark-mode');
+      localStorage.setItem('darkMode', isDark ? 'off' : 'on');
+      applyDark(!isDark);
     });
 
-    // ---- TOPIC FILTER ----
+    /* ---------- TOPIC FILTER ---------- */
     function filterTopic(topic, el) {
-      document.querySelectorAll('.sidebar-topic-item').forEach(i => i.classList.remove('active'));
+      document.querySelectorAll('.sidebar-item').forEach(i => i.classList.remove('active'));
       el.classList.add('active');
       const featured = document.querySelector('.article-featured');
-      const rows = document.querySelectorAll('.article-row');
-      const dividers = document.querySelectorAll('.article-divider');
-      dividers.forEach(d => d.style.display = '');
+      const rows     = document.querySelectorAll('.article-row');
       if (topic === 'all') {
         featured && featured.classList.remove('article-hidden');
         rows.forEach(r => r.classList.remove('article-hidden'));
       } else {
         if (featured) {
-          const t = featured.getAttribute('data-topics') || '';
-          t.split(' ').includes(topic) ? featured.classList.remove('article-hidden') : featured.classList.add('article-hidden');
+          const t = (featured.dataset.topics || '').split(' ');
+          featured.classList.toggle('article-hidden', !t.includes(topic));
         }
         rows.forEach(r => {
-          const t = r.getAttribute('data-topics') || '';
-          t.split(' ').includes(topic) ? r.classList.remove('article-hidden') : r.classList.add('article-hidden');
+          const t = (r.dataset.topics || '').split(' ');
+          r.classList.toggle('article-hidden', !t.includes(topic));
         });
       }
     }

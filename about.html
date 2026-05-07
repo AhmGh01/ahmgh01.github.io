@@ -17,13 +17,17 @@
       <nav class="site-nav">
         <a href="index.html" class="nav-link">المدونة</a>
         <a href="about.html" class="nav-link active">عنّي</a>
+        <button class="dark-btn" id="darkToggle" aria-label="تبديل النمط">
+          <span class="btn-moon">🌙</span>
+          <span class="btn-label">الوضع الليلي</span>
+        </button>
       </nav>
     </div>
   </header>
   <section class="hero hero-about">
     <div class="container">
       <p class="hero-eyebrow">من أنا</p>
-      <h1 class="hero-title">أحمد العبيوي </h1>
+      <h1 class="hero-title">أحمد العبيوي</h1>
       <p class="hero-sub">مختص بالإستراتيجيات، إدارة المشاريع، تحليل الأعمال، وعلم البيانات</p>
     </div>
   </section>
@@ -42,7 +46,7 @@
           <div class="timeline-year">٢٠١٨ — الحاضر</div>
           <div class="timeline-body">
             <h3 class="timeline-title">مدير شعبة في التميز المؤسسي — جهة حكومية</h3>
-            <p class="timeline-desc">الإشراف على الهياكل التنظيمية وتحديثها، وإعداد دليل المهام والمسؤوليات، وإدارة مشروع إعداد الدليل الوظيفي، والمشاركة في تحديث الخطة الاستراتيجية ومشاريع الجودة والتميز المؤسسي.</p>
+            <p class="timeline-desc">الإشراف على الهياكل التنظيمية وتحديثها، وإعداد دليل المهام والمسؤوليات، والمشاركة في تحديث الخطة الاستراتيجية ومشاريع الجودة والتميز المؤسسي.</p>
           </div>
         </div>
         <div class="timeline-item">
@@ -152,5 +156,20 @@
       </div>
     </div>
   </footer>
+  <script>
+    const btn = document.getElementById('darkToggle');
+    const body = document.body;
+    const label = btn.querySelector('.btn-label');
+    function applyDark(on) {
+      body.classList.toggle('dark-mode', on);
+      label.textContent = on ? 'الوضع النهاري' : 'الوضع الليلي';
+    }
+    applyDark(localStorage.getItem('darkMode') === 'on');
+    btn.addEventListener('click', () => {
+      const isDark = body.classList.contains('dark-mode');
+      localStorage.setItem('darkMode', isDark ? 'off' : 'on');
+      applyDark(!isDark);
+    });
+  </script>
 </body>
 </html>

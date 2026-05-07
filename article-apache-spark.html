@@ -4,24 +4,27 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Apache Spark — أحمد العبيوي</title>
-  <script>if(localStorage.getItem('darkMode')==='on')document.documentElement.classList.add('dark-mode');</script>
+  <script>
+    if(localStorage.getItem('darkMode')==='on') document.documentElement.classList.add('dark-mode');
+    var fs = localStorage.getItem('fontSize') || 'md';
+    document.documentElement.setAttribute('data-fs', fs);
+  </script>
   <link rel="icon" type="image/png" href="brain_icon.png">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <header class="site-header">
     <div class="container header-inner">
-      <a href="index.html" class="site-logo">
-        <img src="brain_icon.png" alt="أيقونة" class="site-logo-icon">
-        أحمد العبيوي
-      </a>
+      <a href="index.html" class="site-logo"><img src="brain_icon.png" alt="أيقونة" class="site-logo-icon">أحمد العبيوي</a>
       <nav class="site-nav">
         <a href="index.html" class="nav-link">المدونة</a>
         <a href="about.html" class="nav-link">عنّي</a>
-        <button class="dark-btn" id="darkToggle" aria-label="تبديل النمط">
-          <span class="btn-moon">🌙</span>
-          <span class="btn-label">الوضع الليلي</span>
-        </button>
+        <div class="font-size-controls" aria-label="حجم الخط">
+          <button class="font-size-btn" id="fsDecrease" aria-label="تصغير الخط" title="تصغير الخط">أ−</button>
+          <span class="font-size-divider"></span>
+          <button class="font-size-btn" id="fsIncrease" aria-label="تكبير الخط" title="تكبير الخط">أ+</button>
+        </div>
+        <button class="dark-btn" id="darkToggle" aria-label="تبديل النمط"><span class="btn-moon">🌙</span><span class="btn-label">الوضع الليلي</span></button>
       </nav>
     </div>
   </header>
@@ -30,15 +33,9 @@
       <a href="index.html" class="back-nav">← العودة للمدونة</a>
       <p class="eyebrow">البيانات الضخمة</p>
       <h1 class="article-title">معالجة البيانات الضخمة مع Apache Spark: من النظرية إلى التطبيق</h1>
-      <div class="article-meta">
-        <span>الخميس، ٧ مايو ٢٠٢٦</span>
-        <span class="meta-dot">·</span>
-        <span>١١ دقيقة للقراءة</span>
-      </div>
+      <div class="article-meta"><span>الخميس، ٧ مايو ٢٠٢٦</span><span class="meta-dot">·</span><span>١١ دقيقة للقراءة</span></div>
     </div>
-    <div class="article-cover">
-      <img src="img_spark.png" alt="Apache Spark" class="article-cover-img">
-    </div>
+    <div class="article-cover"><img src="img_spark.png" alt="Apache Spark" class="article-cover-img"></div>
     <hr class="divider">
     <div class="article-body">
       <p class="article-lead">كيفية استخدام Apache Spark لمعالجة وتحليل ملايين السجلات بكفاءة عالية.</p>
@@ -46,35 +43,20 @@
       <p>Apache Spark محرك تحليل بيانات موحّد ومتعدد الخدمات يدعم المعالجة في الذاكرة، مما يجعله أسرع بكثير من معالجة القرص التقليدية.</p>
       <h2>تطبيق عملي</h2>
       <p>سنبني مجموعة بيانات ضخمة ونجري عليها تحليلات متقدمة باستخدام PySpark.</p>
-      <div class="article-footer-nav">
-        <a href="index.html" class="back-link">← العودة للمدونة</a>
-      </div>
+      <div class="article-footer-nav"><a href="index.html" class="back-link">← العودة للمدونة</a></div>
     </div>
   </div>
-  <footer class="site-footer">
-    <div class="container footer-inner">
-      <span class="footer-name">أحمد العبيوي</span>
-      <div class="footer-links">
-        <a href="https://github.com/AhmGh01" target="_blank">GitHub</a>
-        <a href="https://twitter.com/AhGh01_" target="_blank">X (تويتر)</a>
-        <a href="about.html">عنّي</a>
-      </div>
-    </div>
-  </footer>
+  <footer class="site-footer"><div class="container footer-inner"><span class="footer-name">أحمد العبيوي</span><div class="footer-links"><a href="https://github.com/AhmGh01" target="_blank">GitHub</a><a href="https://twitter.com/AhGh01_" target="_blank">X (تويتر)</a><a href="about.html">عنّي</a></div></div></footer>
   <script>
-    const btn = document.getElementById('darkToggle');
-    const label = btn.querySelector('.btn-label');
-    function applyDark(on) {
-      document.documentElement.classList.toggle('dark-mode', on);
-      document.body.classList.toggle('dark-mode', on);
-      label.textContent = on ? 'الوضع النهاري' : 'الوضع الليلي';
-    }
-    applyDark(localStorage.getItem('darkMode') === 'on');
-    btn.addEventListener('click', () => {
-      const isDark = document.body.classList.contains('dark-mode');
-      localStorage.setItem('darkMode', isDark ? 'off' : 'on');
-      applyDark(!isDark);
-    });
+    const btn=document.getElementById('darkToggle'),label=btn.querySelector('.btn-label');
+    function applyDark(on){document.documentElement.classList.toggle('dark-mode',on);document.body.classList.toggle('dark-mode',on);label.textContent=on?'الوضع النهاري':'الوضع الليلي';}
+    applyDark(localStorage.getItem('darkMode')==='on');
+    btn.addEventListener('click',()=>{const d=document.body.classList.contains('dark-mode');localStorage.setItem('darkMode',d?'off':'on');applyDark(!d);});
+    const fsLevels=['sm','md','lg','xl'];let fsIndex=fsLevels.indexOf(localStorage.getItem('fontSize')||'md');
+    function applyFs(){document.documentElement.setAttribute('data-fs',fsLevels[fsIndex]);localStorage.setItem('fontSize',fsLevels[fsIndex]);document.getElementById('fsDecrease').style.opacity=fsIndex===0?'0.35':'1';document.getElementById('fsIncrease').style.opacity=fsIndex===fsLevels.length-1?'0.35':'1';}
+    document.getElementById('fsDecrease').addEventListener('click',()=>{if(fsIndex>0){fsIndex--;applyFs();}});
+    document.getElementById('fsIncrease').addEventListener('click',()=>{if(fsIndex<fsLevels.length-1){fsIndex++;applyFs();}});
+    applyFs();
   </script>
 </body>
 </html>

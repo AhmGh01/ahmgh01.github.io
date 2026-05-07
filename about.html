@@ -4,8 +4,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>عنّي — أحمد العبيوي</title>
-  <!-- تطبيق الوضع الليلي فوراً قبل تحميل CSS لتجنب الوميض -->
-  <script>if(localStorage.getItem('darkMode')==='on')document.documentElement.classList.add('dark-mode');</script>
+  <script>
+    if(localStorage.getItem('darkMode')==='on') document.documentElement.classList.add('dark-mode');
+    var fs = localStorage.getItem('fontSize') || 'md';
+    document.documentElement.setAttribute('data-fs', fs);
+  </script>
   <link rel="icon" type="image/png" href="brain_icon.png">
   <link rel="stylesheet" href="style.css">
 </head>
@@ -19,6 +22,11 @@
       <nav class="site-nav">
         <a href="index.html" class="nav-link">المدونة</a>
         <a href="about.html" class="nav-link active">عنّي</a>
+        <div class="font-size-controls" aria-label="حجم الخط">
+          <button class="font-size-btn" id="fsDecrease" aria-label="تصغير الخط" title="تصغير الخط">أ−</button>
+          <span class="font-size-divider"></span>
+          <button class="font-size-btn" id="fsIncrease" aria-label="تكبير الخط" title="تكبير الخط">أ+</button>
+        </div>
         <button class="dark-btn" id="darkToggle" aria-label="تبديل النمط">
           <span class="btn-moon">🌙</span>
           <span class="btn-label">الوضع الليلي</span>
@@ -47,95 +55,33 @@
     <div class="about-section">
       <h2 class="about-section-title">الخبرة المهنية</h2>
       <div class="timeline">
-        <div class="timeline-item">
-          <div class="timeline-year">٢٠١٨ — الحاضر</div>
-          <div class="timeline-body">
-            <h3 class="timeline-title">مدير شعبة في التميز المؤسسي — جهة حكومية</h3>
-            <p class="timeline-desc">الإشراف على الهياكل التنظيمية وتحديثها، وإعداد دليل المهام والمسؤوليات، والمشاركة في تحديث الخطة الاستراتيجية ومشاريع الجودة والتميز المؤسسي.</p>
-          </div>
-        </div>
-        <div class="timeline-item">
-          <div class="timeline-year">٢٠٢١ — ٢٠٢٥</div>
-          <div class="timeline-body">
-            <h3 class="timeline-title">محاضر متخصص — معهد تابع للجهة</h3>
-            <p class="timeline-desc">تقديم برامج تدريبية في إدارة المشاريع، المهارات الإدارية، والإدارة الاستراتيجية.</p>
-          </div>
-        </div>
-        <div class="timeline-item">
-          <div class="timeline-year">٢٠١٥</div>
-          <div class="timeline-body">
-            <h3 class="timeline-title">متدرب — مدينة الملك عبدالعزيز للعلوم والتقنية (KACST)</h3>
-            <p class="timeline-desc">العمل في المديرية العامة للمعلوماتية، والمشاركة في تطوير واختبار التطبيقات البرمجية.</p>
-          </div>
-        </div>
+        <div class="timeline-item"><div class="timeline-year">٢٠١٨ — الحاضر</div><div class="timeline-body"><h3 class="timeline-title">مدير شعبة في التميز المؤسسي — جهة حكومية</h3><p class="timeline-desc">الإشراف على الهياكل التنظيمية وتحديثها، وإعداد دليل المهام والمسؤوليات، والمشاركة في تحديث الخطة الاستراتيجية ومشاريع الجودة والتميز المؤسسي.</p></div></div>
+        <div class="timeline-item"><div class="timeline-year">٢٠٢١ — ٢٠٢٥</div><div class="timeline-body"><h3 class="timeline-title">محاضر متخصص — معهد تابع للجهة</h3><p class="timeline-desc">تقديم برامج تدريبية في إدارة المشاريع، المهارات الإدارية، والإدارة الاستراتيجية.</p></div></div>
+        <div class="timeline-item"><div class="timeline-year">٢٠١٥</div><div class="timeline-body"><h3 class="timeline-title">متدرب — مدينة الملك عبدالعزيز للعلوم والتقنية (KACST)</h3><p class="timeline-desc">العمل في المديرية العامة للمعلوماتية، والمشاركة في تطوير واختبار التطبيقات البرمجية.</p></div></div>
       </div>
     </div>
     <div class="divider"></div>
     <div class="about-section">
       <h2 class="about-section-title">التعليم</h2>
       <div class="timeline">
-        <div class="timeline-item">
-          <div class="timeline-year">٢٠٢٥ — ٢٠٢٧</div>
-          <div class="timeline-body">
-            <h3 class="timeline-title">ماجستير علم البيانات — الجامعة العربية السعودية الإلكترونية</h3>
-            <p class="timeline-desc">تخصص في علم البيانات والذكاء الاصطناعي.</p>
-          </div>
-        </div>
-        <div class="timeline-item">
-          <div class="timeline-year">٢٠١٦</div>
-          <div class="timeline-body">
-            <h3 class="timeline-title">بكالوريوس إدارة الأعمال — تخصص نظم المعلومات الإدارية — جامعة الملك سعود</h3>
-            <p class="timeline-desc">دراسة تجمع بين عمق التخصص في نظم المعلومات والإدارة.</p>
-          </div>
-        </div>
+        <div class="timeline-item"><div class="timeline-year">٢٠٢٥ — ٢٠٢٧</div><div class="timeline-body"><h3 class="timeline-title">ماجستير علم البيانات — الجامعة العربية السعودية الإلكترونية</h3><p class="timeline-desc">تخصص في علم البيانات والذكاء الاصطناعي.</p></div></div>
+        <div class="timeline-item"><div class="timeline-year">٢٠١٦</div><div class="timeline-body"><h3 class="timeline-title">بكالوريوس إدارة الأعمال — تخصص نظم المعلومات الإدارية — جامعة الملك سعود</h3><p class="timeline-desc">دراسة تجمع بين عمق التخصص في نظم المعلومات والإدارة.</p></div></div>
       </div>
     </div>
     <div class="divider"></div>
     <div class="about-section">
       <h2 class="about-section-title">أبرز الشهادات والدورات</h2>
       <div class="skills-grid">
-        <div class="skill-group">
-          <h3 class="skill-group-title">الإدارة والأعمال</h3>
-          <ul class="skill-list">
-            <li>PMP — محترف إدارة المشاريع | ٢٠٢٣</li>
-            <li>SHRM-ACHRM — إدارة الموارد البشرية | ٢٠٢٥</li>
-            <li>التخطيط الاستراتيجي | جامعة الملك سعود | ٢٠١٩</li>
-            <li>الإدارة الاستراتيجية | مركز قياس | ٢٠٢١</li>
-          </ul>
-        </div>
-        <div class="skill-group">
-          <h3 class="skill-group-title">البيانات والتقنية</h3>
-          <ul class="skill-list">
-            <li>Microsoft Power BI | MCIT | ٢٠٢٤</li>
-            <li>Mathematics for Artificial Intelligence | KAUST Academy | ٢٠٢٣</li>
-            <li>MCIT Jr Data Scientist | INE | ٢٠٢٥</li>
-            <li>دبلوم تعليمي — علوم الحاسب والتقنية | جامعة الملك سعود</li>
-          </ul>
-        </div>
+        <div class="skill-group"><h3 class="skill-group-title">الإدارة والأعمال</h3><ul class="skill-list"><li>PMP — محترف إدارة المشاريع | ٢٠٢٣</li><li>SHRM-ACHRM — إدارة الموارد البشرية | ٢٠٢٥</li><li>التخطيط الاستراتيجي | جامعة الملك سعود | ٢٠١٩</li><li>الإدارة الاستراتيجية | مركز قياس | ٢٠٢١</li></ul></div>
+        <div class="skill-group"><h3 class="skill-group-title">البيانات والتقنية</h3><ul class="skill-list"><li>Microsoft Power BI | MCIT | ٢٠٢٤</li><li>Mathematics for Artificial Intelligence | KAUST Academy | ٢٠٢٣</li><li>MCIT Jr Data Scientist | INE | ٢٠٢٥</li><li>دبلوم تعليمي — علوم الحاسب والتقنية | جامعة الملك سعود</li></ul></div>
       </div>
     </div>
     <div class="divider"></div>
     <div class="about-section">
       <h2 class="about-section-title">المهارات</h2>
       <div class="skills-grid">
-        <div class="skill-group">
-          <h3 class="skill-group-title">التقنية</h3>
-          <ul class="skill-list">
-            <li>Python — تحليل البيانات وتعلم الآلة</li>
-            <li>Power BI — لوحات قيادية تفاعلية</li>
-            <li>بناء مؤشرات الأداء KPIs</li>
-            <li>Microsoft Office المتقدم</li>
-          </ul>
-        </div>
-        <div class="skill-group">
-          <h3 class="skill-group-title">الإدارة والقيادة</h3>
-          <ul class="skill-list">
-            <li>إدارة المشاريع والفرق</li>
-            <li>التخطيط الاستراتيجي والتطوير المؤسسي</li>
-            <li>تحليل الأعمال والهياكل التنظيمية</li>
-            <li>مهارات التواصل وحل المشكلات</li>
-          </ul>
-        </div>
+        <div class="skill-group"><h3 class="skill-group-title">التقنية</h3><ul class="skill-list"><li>Python — تحليل البيانات وتعلم الآلة</li><li>Power BI — لوحات قيادية تفاعلية</li><li>بناء مؤشرات الأداء KPIs</li><li>Microsoft Office المتقدم</li></ul></div>
+        <div class="skill-group"><h3 class="skill-group-title">الإدارة والقيادة</h3><ul class="skill-list"><li>إدارة المشاريع والفرق</li><li>التخطيط الاستراتيجي والتطوير المؤسسي</li><li>تحليل الأعمال والهياكل التنظيمية</li><li>مهارات التواصل وحل المشكلات</li></ul></div>
       </div>
     </div>
     <div class="divider"></div>
@@ -164,20 +110,28 @@
   <script>
     const btn = document.getElementById('darkToggle');
     const label = btn.querySelector('.btn-label');
-
     function applyDark(on) {
       document.documentElement.classList.toggle('dark-mode', on);
       document.body.classList.toggle('dark-mode', on);
       label.textContent = on ? 'الوضع النهاري' : 'الوضع الليلي';
     }
-
     applyDark(localStorage.getItem('darkMode') === 'on');
-
     btn.addEventListener('click', () => {
       const isDark = document.body.classList.contains('dark-mode');
       localStorage.setItem('darkMode', isDark ? 'off' : 'on');
       applyDark(!isDark);
     });
+    const fsLevels = ['sm','md','lg','xl'];
+    let fsIndex = fsLevels.indexOf(localStorage.getItem('fontSize') || 'md');
+    function applyFs() {
+      document.documentElement.setAttribute('data-fs', fsLevels[fsIndex]);
+      localStorage.setItem('fontSize', fsLevels[fsIndex]);
+      document.getElementById('fsDecrease').style.opacity = fsIndex === 0 ? '0.35' : '1';
+      document.getElementById('fsIncrease').style.opacity = fsIndex === fsLevels.length-1 ? '0.35' : '1';
+    }
+    document.getElementById('fsDecrease').addEventListener('click', () => { if(fsIndex>0){fsIndex--;applyFs();} });
+    document.getElementById('fsIncrease').addEventListener('click', () => { if(fsIndex<fsLevels.length-1){fsIndex++;applyFs();} });
+    applyFs();
   </script>
 </body>
 </html>

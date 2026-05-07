@@ -4,14 +4,16 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>أحمد العبيوي — مدونة في علوم البيانات والإدارة</title>
-  <!-- تطبيق الوضع الليلي فوراً قبل تحميل CSS لتجنب الوميض -->
-  <script>if(localStorage.getItem('darkMode')==='on')document.documentElement.classList.add('dark-mode');</script>
+  <script>
+    if(localStorage.getItem('darkMode')==='on') document.documentElement.classList.add('dark-mode');
+    var fs = localStorage.getItem('fontSize') || 'md';
+    document.documentElement.setAttribute('data-fs', fs);
+  </script>
   <link rel="icon" type="image/png" href="brain_icon.png">
   <link rel="apple-touch-icon" href="brain_icon.png">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
   <header class="site-header">
     <div class="container header-inner">
       <a href="index.html" class="site-logo">
@@ -21,6 +23,11 @@
       <nav class="site-nav">
         <a href="index.html" class="nav-link active">المدونة</a>
         <a href="about.html" class="nav-link">عنّي</a>
+        <div class="font-size-controls" aria-label="حجم الخط">
+          <button class="font-size-btn" id="fsDecrease" aria-label="تصغير الخط" title="تصغير الخط">أ−</button>
+          <span class="font-size-divider"></span>
+          <button class="font-size-btn" id="fsIncrease" aria-label="تكبير الخط" title="تكبير الخط">أ+</button>
+        </div>
         <button class="dark-btn" id="darkToggle" aria-label="تبديل النمط">
           <span class="btn-moon">🌙</span>
           <span class="btn-label">الوضع الليلي</span>
@@ -106,7 +113,6 @@
         </a>
       </div>
     </main>
-
     <aside class="topics-sidebar">
       <p class="sidebar-label">المواضيع</p>
       <ul class="sidebar-list">
@@ -132,23 +138,37 @@
   </footer>
 
   <script>
+    /* ---- Dark Mode ---- */
     const btn = document.getElementById('darkToggle');
     const label = btn.querySelector('.btn-label');
-
     function applyDark(on) {
       document.documentElement.classList.toggle('dark-mode', on);
       document.body.classList.toggle('dark-mode', on);
       label.textContent = on ? 'الوضع النهاري' : 'الوضع الليلي';
     }
-
     applyDark(localStorage.getItem('darkMode') === 'on');
-
     btn.addEventListener('click', () => {
       const isDark = document.body.classList.contains('dark-mode');
       localStorage.setItem('darkMode', isDark ? 'off' : 'on');
       applyDark(!isDark);
     });
 
+    /* ---- Font Size ---- */
+    const fsLevels = ['sm','md','lg','xl'];
+    let fsIndex = fsLevels.indexOf(localStorage.getItem('fontSize') || 'md');
+    function applyFs() {
+      document.documentElement.setAttribute('data-fs', fsLevels[fsIndex]);
+      localStorage.setItem('fontSize', fsLevels[fsIndex]);
+      document.getElementById('fsDecrease').disabled = fsIndex === 0;
+      document.getElementById('fsIncrease').disabled = fsIndex === fsLevels.length - 1;
+      document.getElementById('fsDecrease').style.opacity = fsIndex === 0 ? '0.35' : '1';
+      document.getElementById('fsIncrease').style.opacity = fsIndex === fsLevels.length - 1 ? '0.35' : '1';
+    }
+    document.getElementById('fsDecrease').addEventListener('click', () => { if(fsIndex > 0){ fsIndex--; applyFs(); } });
+    document.getElementById('fsIncrease').addEventListener('click', () => { if(fsIndex < fsLevels.length-1){ fsIndex++; applyFs(); } });
+    applyFs();
+
+    /* ---- Topic Filter ---- */
     function filterTopic(topic, el) {
       document.querySelectorAll('.sidebar-item').forEach(i => i.classList.remove('active'));
       el.classList.add('active');
@@ -158,12 +178,8 @@
         featured && featured.classList.remove('article-hidden');
         rows.forEach(r => r.classList.remove('article-hidden'));
       } else {
-        if (featured) {
-          featured.classList.toggle('article-hidden', !(featured.dataset.topics||'').split(' ').includes(topic));
-        }
-        rows.forEach(r => {
-          r.classList.toggle('article-hidden', !(r.dataset.topics||'').split(' ').includes(topic));
-        });
+        if (featured) featured.classList.toggle('article-hidden', !(featured.dataset.topics||'').split(' ').includes(topic));
+        rows.forEach(r => r.classList.toggle('article-hidden', !(r.dataset.topics||'').split(' ').includes(topic)));
       }
     }
   </script>

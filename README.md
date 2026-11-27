@@ -1,2 +1,3 @@
 # ahmgh01.github.io
-مدونتي الشخصية - Data Science, AI &amp; Business Insights
+
+هذا الموقع القديم أُغلق، وكل زياراته تتحوّل تلقائياً إلى المدونة الجديدة: [thedatalead.net](https://thedatalead.net)
